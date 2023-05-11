@@ -21,10 +21,12 @@
 title: Waridh Wongwandanee
 email: waridh@ualberta.ca
 description: >- # this means to ignore newlines until "baseurl:"
-  This is my portfolio website, it contains the hardware and software projects
-  that I have worked on, along with relavent engineering work experience.
+  Waridh (Bach) Wongwandanee's portfolio website. A little about myself, I am
+  a Nanoscale System Design Computer Engineering Student at the University of
+  Alberta. I am currently an intern at Microchip, and work in the Validation
+  department.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://waridh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://waridh.github.io" # the base hostname & protocol for your site
 twitter_username: BachWaridh
 github_username:  waridh
 
