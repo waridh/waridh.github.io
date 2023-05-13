@@ -6,7 +6,7 @@ categories: project CST pointcloud
 excerpt_separator: <!--more-->
 ---
 
-# Overview
+## Overview
 
 In this project, I challenged myself to recreate the geometric roughness analysis from the CloudCompare software in Python. The original code was written in C++, and it measures roughness by creating a best fitting least square plane based on neighbouring points, where the neighbours are points that are within a certain radius of the point being analysed. From there the roughnesss is determined to be the distance the point being analysed is from the best fitting plane.
 

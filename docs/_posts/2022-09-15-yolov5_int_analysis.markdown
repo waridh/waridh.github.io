@@ -5,7 +5,7 @@ date: 2022-09-15 12:00:00 -0700
 categories: project CST CV
 ---
 
-# Overview
+## Overview
 
 The goal of this project was to make a program that could count and analyse
 the objects passing through an intersection. We had gone through many ideas
@@ -26,16 +26,16 @@ to Collision, Post Encroachment Time, and Time Difference to the Point of
 Intersection using different algorithms that took advantage of the coordinate
 datas retrieved from the yolov5 detection.
 
-# Implementation
+## Implementation
 
-## object detection parsing
+### Object Detection Parsing
 
 An object was created for each detected vehicles and pedestrians, where the
 coordinate at every frame will be recorded. This allows for ease of trajectory
 calculations and storage. The data related to each object are stored in a
 vectorized array.
 
-## Coordinate conversion
+### Coordinate Conversion
 
 An essential feature in this project was the ability to convert a pixel
 coordinate taken from the video, and converting it into real world coordinates.
@@ -48,7 +48,7 @@ corner of the crosswalk. This let us calculate the local coordinates in meters
 and create the transformation matrix to convert the pixel coordinate into
 meters coordinate, although the values are not very precise.
 
-### Future works
+#### Future Works
 
 There were plans to improve this feature, in terms of accuracy and gaining
 access to proper global coordiates, however, I have left the project by then.
