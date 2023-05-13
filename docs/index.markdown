@@ -4,3 +4,8 @@
 
 layout: home
 ---
+
+This is some testing texts to see how adding content into this will affect the
+jekyll rendering.
+
+# Bach
