@@ -23,7 +23,7 @@ Compute Canada high performance computer array with reduced fps and detection
 model. This allowed us the cut the running time from five to seven hours to
 only around 40 minute for every 30 minutes of input data.
 
-![Point cloud geometric roughness rendering](/docs/assets/images/python_geo_roughness/roughness0.3road1.jpg)
+![Point cloud geometric roughness rendering](assets/images/python_geo_roughness/roughness0.3road1.jpg)
 
 The resulting output from running Python point cloud roughness on a sample LiDAR input was identical to those from the CloudCompare geometric roughness calculations. I was very proud of the result that was achieved by this program. To analyse these intersections, we needed to process the outputs from the
 yolov5 program. Using multiprocessing, we were able to determine the cars Time
