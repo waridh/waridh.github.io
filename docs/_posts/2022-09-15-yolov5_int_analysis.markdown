@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yolov5 Traffic Intersection Analysis v1"
+title: "Yolov5 Traffic Intersection Analysis v2"
 date: 2022-09-15 12:00:00 -0700
 categories: project CST CV
 ---
