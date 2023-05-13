@@ -18,7 +18,7 @@ Compute Canada high performance computer array with reduced fps and detection
 model. This allowed us the cut the running time from five to seven hours to
 only around 40 minute for every 30 minutes of input data.
 
-![yolov5example](/docs/resources/images/yolov5_int_analysis/yolodetectiontraffic.png)
+![yolov5example](/resources/images/yolov5_int_analysis/yolodetectiontraffic.png)
 
 To analyse these intersections, we needed to process the outputs from the
 yolov5 program. Using multiprocessing, we were able to determine the cars Time
