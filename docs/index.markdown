@@ -5,7 +5,6 @@
 layout: home
 ---
 
-This is some testing texts to see how adding content into this will affect the
-jekyll rendering.
+# Welcome!
 
-# Bach
+I'm glad you were able to find my website, please feel free to look around.
