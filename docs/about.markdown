@@ -16,6 +16,9 @@ lower level system designs.
 ## Knowledgebase
 
 The following is a list of concepts, tools, and frameworks I have knowledge in.
+This list will include knowledge in details that would not be appropriate on
+a resume. Continue reading at your own peril, this list gets updated as skills
+are gained.
 <!--more-->
 
 ### Programming languages
@@ -28,10 +31,9 @@ The following is a list of concepts, tools, and frameworks I have knowledge in.
 
 ##### POSIX standards
 
-Able to use the POSIX standards for system calls and access kernal level
-operating system features. Some operating system concepts I can use with
-POSIX are processes, threads, thread synchronization, and deadlock
-handling.
+- Sockets
+- Threads
+- Semaphors and other synchronization primitives
 
 ##### Jekyll
 
@@ -40,12 +42,21 @@ website creation with significant documentation features.
 
 ### Concepts
 
-#### Operating System Concepts
+#### Operating System Concepts (Implemented on UNIX)
 
-##### Processes
+- Processes
+- Threads
+- Interprocess communications (local machine)
+- Socket (TCP and UDP protocols)
+- Shared memory and synchronization primitves
+- Deadlock handling
+- Memory managment and virtual memory
+- CPU scheduling
 
-Knowledge in the creation and inner workings of processes, specifically the
-UNIX variants. Familiar with compilation, linking and loading of UNIX threads,
-both statically and dyncamically in both the linking and loading process. Hold
-understanding of the address space of a program, along with some swapping
-algorithms.
+#### Connection protocols
+
+- SAS
+- SATA
+- USB
+- I2C
+- UART
