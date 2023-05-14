@@ -24,19 +24,16 @@ The following is a list of concepts, tools, and frameworks I have knowledge in.
 
 #### Programming Frameworks
 
-```markdown
-1.  POSIX standards
-      Able to use the POSIX standards for system calls and access kernal level
-      operating system features. Some operating system concepts I can use with
-      POSIX are processes, threads, thread synchronization, and deadlock
-      handling.
-2.  Jekyll
-      This website is created using the Jekyll framework. Allows for efficient
-      website creation with significant documentation features.
-```
+##### POSIX standards
 
-### Computer Science Concepts
+Able to use the POSIX standards for system calls and access kernal level
+operating system features. Some operating system concepts I can use with
+POSIX are processes, threads, thread synchronization, and deadlock
+handling.
 
-### Computer Engineering Concepts
+##### Jekyll
 
-### Electrical Engineering Concepts
+  This website is created using the Jekyll framework. Allows for efficient
+  website creation with significant documentation features.
+
+### Concepts
