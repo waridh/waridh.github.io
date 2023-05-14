@@ -4,9 +4,39 @@ title: About
 permalink: /about/
 ---
 
+## Overview
+
 Hello there, welcome to my portfolio! My name is Waridh Wongwandanee, but you can call me Bach. I am currently a Product Validation intern at Microchip and I
 am working towards a Bachelors of Nanoscale System Design Computer Engineering
-at the University of Alberta.
+at the University of Alberta. In the first three years of my degree, I've been
+mostly focused on software projects and skills, but we are now shifting towards
+lower level system designs.
 
+## Knowledgebase
 
-[jekyll-organization]: https://github.com/jekyll
+The following is a list of concepts, tools, and frameworks I have knowledge in.
+
+### Programming languages
+
+- C/C++ (Intermediate)
+- Python (Intermediate)
+- TCL (Introductory)
+
+#### Programming Frameworks
+
+```markdown
+1.  POSIX standards
+      Able to use the POSIX standards for system calls and access kernal level
+      operating system features. Some operating system concepts I can use with
+      POSIX are processes, threads, thread synchronization, and deadlock
+      handling.
+2.  Jekyll
+      This website is created using the Jekyll framework. Allows for efficient
+      website creation with significant documentation features.
+```
+
+### Computer Science Concepts
+
+### Computer Engineering Concepts
+
+### Electrical Engineering Concepts
