@@ -25,6 +25,8 @@ are gained.
 
 - C/C++ (Intermediate)
 - Python (Intermediate)
+- Matlab (Intermediate)
+- THUMB2 Assembly (Basic)
 - TCL (Introductory)
 
 #### Programming Frameworks
@@ -35,10 +37,15 @@ are gained.
 - Threads
 - Semaphors and other synchronization primitives
 
-##### Jekyll
+##### Python
 
-This website is created using the Jekyll framework. Allows for efficient
-website creation with significant documentation features.
+- OpenCV
+- numpy
+- pandas
+
+### Other Tools
+
+#### VHDL
 
 ### Concepts
 
