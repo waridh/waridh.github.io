@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+excerpt_separator: <!--more-->
 ---
 
 ## Overview
@@ -15,6 +16,7 @@ lower level system designs.
 ## Knowledgebase
 
 The following is a list of concepts, tools, and frameworks I have knowledge in.
+<!--more-->
 
 ### Programming languages
 
@@ -33,7 +35,17 @@ handling.
 
 ##### Jekyll
 
-  This website is created using the Jekyll framework. Allows for efficient
-  website creation with significant documentation features.
+This website is created using the Jekyll framework. Allows for efficient
+website creation with significant documentation features.
 
 ### Concepts
+
+#### Operating System Concepts
+
+##### Processes
+
+Knowledge in the creation and inner workings of processes, specifically the
+UNIX variants. Familiar with compilation, linking and loading of UNIX threads,
+both statically and dyncamically in both the linking and loading process. Hold
+understanding of the address space of a program, along with some swapping
+algorithms.
