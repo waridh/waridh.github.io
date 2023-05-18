@@ -43,7 +43,8 @@ to be exported to a .las file.
 
 ### Datastructure
 
-A class was constructed to store the input point cloud based on numpy arrays.
+- A class was constructed to store the input point cloud based on numpy arrays.
+- Methods for initializing and processing data are included in this class.
 
 ### Roughness calculations
 
