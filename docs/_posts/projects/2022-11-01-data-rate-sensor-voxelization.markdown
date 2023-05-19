@@ -8,15 +8,29 @@ excerpt_separator: <!--more-->
 
 ## Overview
 
-In this project, I was tasked with analysing the data rate required to process data from a sensor as an autonomous vehicle moves through an environment. To do this, we used LiDAR point clouds taken by Transport Alberta as the input. The trajectory of the scanning vehicle was created by making a best fitting least square parametric based on the points that were scanned directly beneath the scanner vehicle. We then created evenly spaced roadpoints on this parametric. From there, we take a snapshot of the point cloud from each point, where we remove points that are too far away to be seen. We then voxelize those points in a spherical coordinate instead of the conventional cartesian. Occlusions in the scan was then simulated by removing points with identicle angular coordinates that are not the closest one.
+### Motivation
+
+The program was created because we wanted to see if we could quantify the amount
+of data that an autonomous vehicle would require in a particular position on
+the planet.
+
+In this project, I was tasked with analysing the data rate required to process
+data from a sensor as an autonomous vehicle moves through an environment. To
+do this, we used dense LiDAR point clouds taken as the input.
+Points on the road following the trajectory of the scanning vehicle were then
+created to base a simulated scene on. We then begin the simulated scene creation
+by removing irrelevant points that are outside the sensor range.
+We then voxelize the remaining points in a spherical coordinate instead of the
+conventional cartesian coordinates.
+Occlusions in the scan was then simulated by removing points with the same
+angular coordinates but different distance from the sensor, with the idea being
+that only the closest point should be seen by the sensor.
 
 ![Point cloud geometric roughness rendering](/assets/sensor_vox/single_sensor_scan.jpg)
 
 The resulting output from running Python point cloud roughness on a sample LiDAR
 input seen above was identical to those from the CloudCompare geometric
 roughness calculations.
-
-The github repository hosting the code for this project can be found [here](https://github.com/waridh/python_roughness_pointcloud).
 
 ## Methodology
 
@@ -47,3 +61,18 @@ least square fitting plane built on the points returned from the range query
 will be taken as the geometric roughness value of that point. By using
 multiprocessing, we were able to speed up the processing time of the geometric
 roughness calculations.
+
+## Future Works
+
+### Occlusion Handling
+
+Although working with larger angluar resolutions, once the resolution increases,
+inconsistent and sometimes incorrect voxels are rendered. Essentially, points
+that realistically should not be showing up are appearing because the current
+system does not take into account the real geometry, and instead, only the
+points present in the input. A filtering method should be implemented to
+increase the accuracy of occlusion handling.
+
+## Reference
+
+Citations are in progress

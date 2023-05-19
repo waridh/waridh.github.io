@@ -26,7 +26,7 @@ to Collision, Post Encroachment Time, and Time Difference to the Point of
 Intersection using different algorithms that took advantage of the coordinate
 datas retrieved from the yolov5 detection.
 
-## Implementation
+## Methodology
 
 ### Object Detection Parsing
 

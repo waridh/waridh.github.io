@@ -59,3 +59,7 @@ least square fitting plane built on the points returned from the range query
 will be taken as the geometric roughness value of that point. By using
 multiprocessing, we were able to speed up the processing time of the geometric
 roughness calculations.
+
+## References
+
+Citations are in progress
