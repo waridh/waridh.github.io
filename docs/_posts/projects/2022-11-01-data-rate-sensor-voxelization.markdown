@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 In this project, I was tasked with analysing the data rate required to process data from a sensor as an autonomous vehicle moves through an environment. To do this, we used LiDAR point clouds taken by Transport Alberta as the input. The trajectory of the scanning vehicle was created by making a best fitting least square parametric based on the points that were scanned directly beneath the scanner vehicle. We then created evenly spaced roadpoints on this parametric. From there, we take a snapshot of the point cloud from each point, where we remove points that are too far away to be seen. We then voxelize those points in a spherical coordinate instead of the conventional cartesian. Occlusions in the scan was then simulated by removing points with identicle angular coordinates that are not the closest one.
 
-![Point cloud geometric roughness rendering](/assets/sensor_vox/Single sensor scan.jpg)
+![Point cloud geometric roughness rendering](/assets/sensor_vox/single_sensor_scan.jpg)
 
 The resulting output from running Python point cloud roughness on a sample LiDAR
 input seen above was identical to those from the CloudCompare geometric
