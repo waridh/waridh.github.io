@@ -6,6 +6,8 @@ categories: project CST pointcloud
 excerpt_separator: <!--more-->
 ---
 
+[link](https://github.com/waridh/python_roughness_pointcloud)
+
 ## Overview
 
 In this project, I challenged myself to recreate the geometric roughness
