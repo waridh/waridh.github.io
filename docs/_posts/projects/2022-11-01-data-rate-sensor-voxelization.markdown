@@ -6,27 +6,28 @@ categories: project CST pointcloud
 excerpt_separator: <!--more-->
 ---
 
-## Overview
-
-### Motivation
+## Motivation
 
 The program was created because we wanted to see if we could quantify the amount
-of data that an autonomous vehicle would require in a particular position on
-the planet.
+of data that an autonomous vehicle would require in a particular lattitude and
+longitude.
+
+## Overview
 
 In this project, I was tasked with analysing the data rate required to process
 data from a sensor as an autonomous vehicle moves through an environment. To
-do this, we used dense LiDAR point clouds taken as the input.
-Points on the road following the trajectory of the scanning vehicle were then
-created to base a simulated scene on. We then begin the simulated scene creation
-by removing irrelevant points that are outside the sensor range.
+do this, we analyzed dense LiDAR point clouds and simulated what is observed
+by a sensor at a particular point.
+Points on the road following the trajectory of the LiDAR scanning vehicle were
+created to base the simulated scenes on. We then begin the simulated scene
+creation by removing irrelevant points that are outside the sensor range.
 We then voxelize the remaining points in a spherical coordinate instead of the
 conventional cartesian coordinates.
 Occlusions in the scan was then simulated by removing points with the same
 angular coordinates but different distance from the sensor, with the idea being
 that only the closest point should be seen by the sensor.
 
-![Point cloud geometric roughness rendering](/assets/sensor_vox/single_sensor_scan.jpg)
+![Point cloud geometric roughness rendering](/assets/images/sensor_vox/single_sensor_scan.jpg)
 
 The resulting output from running Python point cloud roughness on a sample LiDAR
 input seen above was identical to those from the CloudCompare geometric
@@ -34,21 +35,19 @@ roughness calculations.
 
 ## Methodology
 
-The goal of this project was to recreate the output from CloudCompare, no GUI
-was developed for it.
+### Input
 
-### I/O
+The program takes dense point cloud data taken from LiDAR scanners as an input
+for sensor simulation. The format of this file was a .las filetype.
 
-The input and output file are of .las format, a common format to store LiDAR
-point cloud. The library used to parse this file format was chosen to be Laspy,
-as it was flexible with the amount of content provided by the input file, while
-still being able to detect more niche fields. It also allows point cloud object
-to be exported to a .las file.
+### Trajectory and Observers
 
-### Datastructure
-
-- A class was constructed to store the input point cloud based on numpy arrays.
-- Methods for initializing and processing data are included in this class.
+The trajectory of the scanning vehicle was recreated by fitting a least square
+parametric curve on the points that layed directly under the scanning vehicle.
+Points were then evenly placed on this curve with a the distance between them
+set to a user defined value. Points are then placed directly on top of the
+points on the parametric curve. These point are named observer points, and it
+is the reference points for the simulations.
 
 ### Roughness calculations
 
