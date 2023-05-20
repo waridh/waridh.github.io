@@ -28,6 +28,9 @@ angular coordinates, keeping only the closest.
 
 ![This image shows a simulated scan from one observer.](/assets/images/sensor_vox/single_sensor_scan.jpg)
 
+After the processed voxels were finalized, they had to be rendered. This was
+done by writing the shape of the voxel into a .ply file.
+
 ![This image shows a simulated scan from multiple observers, combined together](/assets/images/sensor_vox/two_sensor_scans_100_and_250.jpg)
 
 ## Reference

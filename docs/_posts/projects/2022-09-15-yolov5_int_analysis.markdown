@@ -48,7 +48,7 @@ corner of the crosswalk. This let us calculate the local coordinates in meters
 and create the transformation matrix to convert the pixel coordinate into
 meters coordinate, although the values are not very precise.
 
-#### Future Works
+## Future Works
 
 There were plans to improve this feature, in terms of accuracy and gaining
 access to proper global coordiates, however, I have left the project by then.
