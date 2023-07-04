@@ -13,7 +13,7 @@ at the University of Alberta. In the first three years of my degree, I've been
 mostly focused on software projects and skills, but we are now shifting towards
 lower level system designs.
 
-## Knowledgebase
+## Knowledge Base
 
 The following is a list of concepts, tools, and frameworks I have knowledge in.
 This list will include knowledge in details that would not be appropriate on
