@@ -21,49 +21,10 @@ a resume. Continue reading at your own peril, this list gets updated as skills
 are gained.
 <!--more-->
 
-### Programming languages
-
-- C/C++ (Intermediate)
-- Python (Intermediate)
-- Matlab (Intermediate)
-- THUMB2 Assembly (Basic)
-- TCL (Introductory)
-
-#### Programming Frameworks
-
-##### POSIX standards
-
-- Sockets
-- Threads
-- Semaphors and other synchronization primitives
-
-##### Python
-
-- OpenCV
-- numpy
-- pandas
-
-### Other Tools
-
-#### VHDL
-
-### Concepts
-
-#### Operating System Concepts (Implemented on UNIX)
-
-- Processes
-- Threads
-- Interprocess communications (local machine)
-- Socket (TCP and UDP protocols)
-- Shared memory and synchronization primitves
-- Deadlock handling
-- Memory managment and virtual memory
-- CPU scheduling
-
-#### Connection protocols
-
-- SAS
-- SATA
-- USB
-- I2C
-- UART
+| | |
+| --- | --- |
+| Programming Languages | C/C++, MATLAB, Python, Tcl |
+| HDLs | SystemVerilog, VHDL |
+| Software Protocols and Libraries | POSIX standards, UNIX system calls, Numpy, Pandas |
+| Architectural Knowledge | UNIX Operating System |
+| Hardware Protocols | SAS, SATA, I2C, UART |
