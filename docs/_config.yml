@@ -80,6 +80,8 @@ search      : true
 lunr:
   search_within_pages: true
 
+paginate    : 3
+
 google_site_verification: "googlebee16fba23adfa23"
 
 og_image: "/assets/images/meta/neon_wall.jpg"
