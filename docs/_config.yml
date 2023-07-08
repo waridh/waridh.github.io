@@ -40,21 +40,21 @@ url: "https://waridh.github.io"
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
   avatar           : "/assets/images/michael-rose.jpg"
-  bio              : "Just another *boring*, *tattooed*, *time traveling*, *designer*."
-  location         : "Buffalo, NY"
+  bio              : "Computer Engineering student trying to be good at both hardware and software."
+  location         : "Burnaby, BC"
   links:
-    - label: "Made Mistakes"
+    - label: "My other site"
       icon: "fas fa-fw fa-link"
-      url: "https://mademistakes.com"
+      url: "https://waridh.ca"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mmistakes"
+      url: "https://www.threads.net/@bach_w_w"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/mmistakes"
+      url: "https://github.com/waridh"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/mmistakes"
+      url: "https://instagram.com/bach_w_w"
 
 plugins:
   - jekyll-feed
