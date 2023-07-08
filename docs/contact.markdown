@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact
-permalink: /contact/
+permalink: /about/contact/
 ---
 
 I am always looking to connect with new people. Feel free to contact me using the following information:  
