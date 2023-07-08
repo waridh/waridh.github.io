@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 ## Overview
 
-Hello there, welcome to my portfolio! My name is Waridh Wongwandanee, but you can call me Bach. I am currently a Product Validation intern at Microchip and I
+Hello there, welcome to my personal website! A little introduction about me, my name is Waridh Wongwandanee, but you can call me Bach. I am currently a Product Validation intern at Microchip and I
 am working towards a Bachelors of Nanoscale System Design Computer Engineering
 at the University of Alberta. In the first three years of my degree, I've been
 mostly focused on software projects and skills, but we are now shifting towards
