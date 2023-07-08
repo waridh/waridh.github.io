@@ -3,6 +3,7 @@ layout: single
 title: "Yolov5 Traffic Intersection Analysis"
 date: 2022-09-15 12:00:00 -0700
 categories: project CST CV
+excerpt: "Computer vision project where location and trajectory of object has to be mapped."
 ---
 
 ## Overview
