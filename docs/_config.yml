@@ -59,9 +59,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/waridh-wongwandanee/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://www.threads.net/@bach_w_w"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/waridh"
@@ -71,6 +68,9 @@ author:
 
 footer:
   links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/waridh-wongwandanee/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/waridh"
