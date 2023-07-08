@@ -57,7 +57,7 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://waridh.ca"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/waridh-wongwandanee/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
