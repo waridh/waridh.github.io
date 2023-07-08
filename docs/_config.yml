@@ -83,7 +83,6 @@ defaults:
       type: posts
     values:
       show_date: true
-      read_time: true
 
 include:
   - _pages
