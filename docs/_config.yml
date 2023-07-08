@@ -92,6 +92,8 @@ plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
 
+atom_feed:
+  hide: true
 
 # Conversion
 markdown: kramdown
