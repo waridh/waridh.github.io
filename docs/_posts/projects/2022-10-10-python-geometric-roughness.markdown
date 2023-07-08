@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "Python Point Cloud Geometric Roughness"
 date: 2022-10-10 12:00:00 -0700
 categories: project CST pointcloud
