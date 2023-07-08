@@ -27,7 +27,7 @@ twitter_username: BachWaridh
 github_username:  waridh
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "https://github.com/waridh/minimal-mistakes"
 minimal_mistakes_skin: "contrast"
 
 # Site settings
