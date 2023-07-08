@@ -18,22 +18,20 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-email: waridh@ualberta.ca
-description: >- # this means to ignore newlines until "baseurl:"
-  Waridh (Bach) Wongwandanee's portfolio website. Designed using Jekyll and
-  hosted on Github Pages.
-baseurl: "" # the subpath of your site, e.g. /blog
-twitter_username: BachWaridh
-github_username:  waridh
-
 # Build settings
 remote_theme: "https://github.com/waridh/minimal-mistakes"
 minimal_mistakes_skin: "contrast"
 
+locale              : "en-US"
+
 # Site settings
 title: "Bach Wongwandanee"
-title_separator: "-"
+title_separator: "|>"
 name: &name "Bach Wongwandanee"
+
+description         : "Personal website of Waridh (Bach) Wongwandanee."
+
+baseurl: ""
 url: "https://waridh.github.io"
 
 # Site Author
