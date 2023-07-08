@@ -78,6 +78,11 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bach_w_w"
 
+search      : true
+
+lunr:
+  search_within_pages: true
+
 defaults:
   # _posts
 
