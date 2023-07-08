@@ -75,6 +75,15 @@ footer:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/bach_w_w"
 
+defaults:
+  # _posts
+
+  - scope:
+      path: ""
+      type: posts
+    values:
+      show_date: true
+
 include:
   - _pages
 
