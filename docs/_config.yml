@@ -84,6 +84,15 @@ paginate    : 3
 
 google_site_verification: "googlebee16fba23adfa23"
 
+timezone    : "Canada/Pacific"
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
 og_image: "/assets/images/meta/neon_wall.jpg"
 
 social:
