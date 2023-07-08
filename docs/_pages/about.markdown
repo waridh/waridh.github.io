@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Abouta
+title: About
 author_profile: true
 permalink: /about/
 excerpt_separator: <!--more-->
