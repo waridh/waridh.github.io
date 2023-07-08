@@ -105,7 +105,7 @@ defaults:
       read_time: true
       show_date: true
       share: true
-
+defaults:
   # _pages
   - scope:
     path: ""
