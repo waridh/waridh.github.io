@@ -117,7 +117,7 @@ collections:
 
 relative_links:
   enable: true
-  collections: false
+  collections: true
 
 defaults:
   # _posts
