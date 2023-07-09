@@ -3,15 +3,15 @@ main:
   - title: "Blog"
     url: "https://waridh.github.io/blog/"
     description: "My personal blog"
-  - title: "About"
-    url: https://waridh.github.io/about/
-    description: "About me"
   - title: "Projects"
     url: https://waridh.github.io/projects/
     description: "My projects"
   - title: "Notes"
     url: https://waridh.github.io/notes/
     description: "Notes archive"
+  - title: "About"
+    url: https://waridh.github.io/about/
+    description: "About me"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
