@@ -1,5 +1,6 @@
 ---
 layout: single
+title: "About me"
 author_profile: true
 permalink: /about/
 excerpt: "My name is Bach, nice to meet you!"
