@@ -162,8 +162,16 @@ defaults:
       show_date: true
       share: true
       toc: true
+      categories: notes
       header:
         image: /assets/images/splash_page.png
+  -
+    scope:
+      path: "/notes/ocaml"
+    values:
+      categories: ocaml
+      header:
+        teaser: /assets/image/ocaml_teaser.png
 
 
 
