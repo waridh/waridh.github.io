@@ -113,7 +113,7 @@ collections:
     permalink: /:collection/:path/
   ocaml:
     output: true
-    permalink: notes/:collection/:path/
+    permalink: /notes/:collection/:path/
 
 relative_links:
   enable: true
@@ -164,7 +164,7 @@ defaults:
       toc: true
       categories: notes
       header:
-        image: /assets/images/splash_page.png
+        image: /assets/images/ocaml_teaser.png
         teaser: /assets/images/ocaml_teaser.png
  
 
