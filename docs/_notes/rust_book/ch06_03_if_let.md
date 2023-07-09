@@ -1,4 +1,6 @@
 ---
+title: "Rust Book: 06.03 if let"
+layout: single
 tags: rust, enum
 ---
 # `if let`

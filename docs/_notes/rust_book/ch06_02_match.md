@@ -1,4 +1,6 @@
 ---
+layout: single
+title: "Rust Book: 06.02 match"
 tags: rust, enum, match
 ---
 # `match` Flow Control

@@ -1,4 +1,6 @@
 ---
+layout: single
+title: "Rust Book: 06.01 Enumeration"
 tags: rust, enum
 ---
 # `enum`
