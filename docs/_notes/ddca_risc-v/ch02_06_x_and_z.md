@@ -1,3 +1,8 @@
+---
+title: "DDCA: 02.06 X's and Z's"
+tags: ddca digital_logic
+layout: single
+---
 # 2.6 X's and Z's, Oh MY
 
 Boolean algebra is limited to 0's and 1's, but real circuits can have illegal and floating values. This is represented symbolically with X and Z.
