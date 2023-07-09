@@ -1,3 +1,8 @@
+---
+title: "CS3110 02.03 Expressions"
+layout: single
+tag: ocaml
+---
 # Expressions
 
 If imperative languages are primarily built on commands, then functional languages are primarily built on expressions. Some examples are `2 + 2` or `increment 21`.
