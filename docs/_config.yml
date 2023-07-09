@@ -167,7 +167,7 @@ defaults:
         image: /assets/images/splash_page.png
   -
     scope:
-      path: "/notes/ocaml"
+      path: "/_notes/ocaml"
     values:
       categories: ocaml
       header:
