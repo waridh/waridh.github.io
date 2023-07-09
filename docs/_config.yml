@@ -111,6 +111,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
   ocaml:
     output: true
     permalink: /notes/:collection/:path/
@@ -152,16 +155,21 @@ defaults:
       toc: true
       header:
         image: /assets/images/site_header.png
-  - scope:
+  -
+    scope:
       path: ""
-      type: ocaml
+      type: notes
     values:
       layout: single
       author_profile: false
       read_time: true
-      show_date: true
       share: true
+      show_date: true
       toc: true
+  - scope:
+      path: ""
+      type: ocaml
+    values:
       categories: notes
       header:
         image: /assets/images/ocaml_teaser.png
