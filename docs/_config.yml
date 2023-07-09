@@ -116,7 +116,7 @@ collections:
     permalink: /:collection/:path/
   ocaml:
     output: true
-    permalink: /:collection/:path/
+    permalink: /notes/:collection/:path/
 
 defaults:
   # _posts
@@ -163,6 +163,12 @@ defaults:
       toc: true
       header:
         image: /assets/images/splash_page.png
+  - scope:
+      path: ""
+      type: ocaml
+    values:
+      layout: single
+      read_time: true
 
 
 include:
