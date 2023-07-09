@@ -1,11 +1,8 @@
 ---
 layout: single
-title: About
 author_profile: true
 permalink: /about/
 excerpt: "My name is Bach, nice to meet you!"
-header:
-  image: /assets/images/meta/neon_wall.jpg
 ---
 
 ## Overview
