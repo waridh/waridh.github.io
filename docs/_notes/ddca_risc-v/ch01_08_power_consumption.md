@@ -15,24 +15,25 @@ Digital systems draw both *static* and *dynamic* power.
 - **Dynamic Power**: The power used to charge capacitors when it changes from 0 to 1.
 - **Static Power**: The power that is always used, even when the gates are closed, or when the system is IDLE.
 
-Logic gates and the wires that connect them have capacitance. The energy required to charge a capacitance $C$ to $V_{DD}$ is ${CV_{DD}}^2$. If a system operates at a frequency $f$, and the fraction of the cycles on which the capacitor charges and discharges is $\alpha$, (also called the **activity factor**), then the dynamic power consumptions is defined by the following equation.
+Logic gates and the wires that connect them have capacitance. The energy required to charge a capacitance $$C$$ to $$V_{DD}$$ is $${CV_{DD}}^2$$. If a system operates at a frequency $$f$$, and the fraction of the cycles on which the capacitor charges and discharges is $$\alpha$$, (also called the **activity factor**), then the dynamic power consumptions is defined by the following equation.
+
 $$
 P_{\text{dynamic}=\alpha C{V_{DD}}^2f}
 $$
 
 ### Clock diagram
 
-![](../../assets/Pasted%20image%2020230618183400.png)
+![](/assets/Pasted%20image%2020230618183400.png)
 
-In a), the signal is rising and falling once every clock signal. The activity factor for this signal is then 1. The clock period between rising edges is called $T_c$, and it is the reciprocal of the frequency $f$. In b), the signal is changing once every clock cycle, and thus, since there is only one activity per cycle, the $\alpha$ is set to 0.5, as half a rising, and half a falling. in c), the activity has moved on to once every other clock, and this will cause the $\alpha$ to be 0.25. You can think of $\alpha=1$ as when there are two changes in a single clock, and do that fractional math from there with rates and stuff.
+In a), the signal is rising and falling once every clock signal. The activity factor for this signal is then 1. The clock period between rising edges is called $$T_c$$, and it is the reciprocal of the frequency $$f$$. In b), the signal is changing once every clock cycle, and thus, since there is only one activity per cycle, the $$\alpha$$ is set to 0.5, as half a rising, and half a falling. in c), the activity has moved on to once every other clock, and this will cause the $$\alpha$$ to be 0.25. You can think of $$\alpha=1$$ as when there are two changes in a single clock, and do that fractional math from there with rates and stuff.
 
 Real digital systems will have components that are not switching, so an activity factor of 0.1 is more typical.
 
 ## IDLE Power Draw
 
-Even when the components are idle, electrical system will still have some power draw that occurs. Some circuits will have a path from $V_{DD}$ to ground, which will cause power to be drawn continuously, such as a pseudo-nMOS gate.
+Even when the components are idle, electrical system will still have some power draw that occurs. Some circuits will have a path from $$V_{DD}$$ to ground, which will cause power to be drawn continuously, such as a pseudo-nMOS gate.
 
-The total static current, $I_{DD}$ is also called the **leakage current** or the **quiescent supply current** flowing between the $V_{DD}$ and $GND$. The static power consumption is proportional to $I_{DD}$.
+The total static current, $$I_{DD}$$ is also called the **leakage current** or the **quiescent supply current** flowing between the $$V_{DD}$$ and $$GND$$. The static power consumption is proportional to $$I_{DD}$$.
 
 $$
 P_{\text{static}}=I_{DD}V_{DD}
@@ -46,7 +47,7 @@ A particular cell phone has an 8W-hr battery and operates at 0.707V. Suppose tha
 
 #### Answer
 
-![](../../assets/powerex-5.jpg)
+![](/assets/powerex-5.jpg)
 
 
 
