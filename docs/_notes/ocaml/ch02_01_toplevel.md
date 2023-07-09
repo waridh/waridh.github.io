@@ -1,3 +1,8 @@
+---
+title: "CS3110 02.01 OCaml Toplevel"
+layout: single
+tags: cs3110
+---
 # The OCaml Toplevel
 
 The Toplevel is like a calculator or a command-line interface to OCaml. It's similar to JShell for Java, or the interactive Python interpreter. The toplevel is useful for trying out small piece of code without going to the trouble of launching the OCaml compiler, but its not very good for working with larger programs.

@@ -1,4 +1,5 @@
 ---
+title: "CS3110 01.00 Better Programming Through OCaml"
 tags: cs3110 ocaml
 categories: notes programming
 ---
