@@ -1,15 +1,17 @@
 ---
+title: "Rust Book: 06.00 Enumeration"
 tags: rust, enum
 ---
-# Overview
+## Overview
 
 Enums are used to define a type by enumerating it's possible variants.
+
 - You can encode meaning with the data
 - In rust, you can use the enum `Option`, which lets you identify if a value is something, or nothing.
 - Rust pattern matching is also included in this.
 - Finally, `if let` is a feature that allows you to handle enums in more ways.
 
-# Link
+## Link
 
 - [`enum`]({% link ch06_01_enums.md %})
 - [`match`]({% link ch06_02_match.md %})
