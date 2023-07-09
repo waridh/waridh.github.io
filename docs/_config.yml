@@ -38,7 +38,7 @@ repository          : "waridh/waridh.github.io"
 
 teaser              : "/assets/images/meta/hello_summer_neon.jpg"
 
-logo                : "/android-chrome-192x192.png"
+logo                : "android-chrome-192x192.png"
 
 masthead_title      : "Waridh"
 
