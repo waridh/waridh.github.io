@@ -3,6 +3,8 @@ layout: single
 author_profile: true
 permalink: /about/
 excerpt: "My name is Bach, nice to meet you!"
+header:
+  image: /assets/images/site_headers.png
 ---
 
 ## Overview
