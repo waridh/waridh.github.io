@@ -1,6 +1,6 @@
 ---
 title: "DDCA: 01.08 Power Consumption"
-tags: ddca computer_architecture
+tags: ddca computer_architecture notes
 
 ---
 
