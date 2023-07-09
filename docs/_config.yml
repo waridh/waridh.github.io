@@ -173,6 +173,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-relative-links
 
 whitelist:
   - jekyll-paginate
@@ -180,6 +181,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-relative-links
 
 atom_feed:
   hide: true

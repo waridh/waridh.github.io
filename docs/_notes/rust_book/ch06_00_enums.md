@@ -13,6 +13,6 @@ Enums are used to define a type by enumerating it's possible variants.
 
 ## Link
 
-- [`enum`]({% link ch06_01_enums.md %})
-- [`match`]({% link ch06_02_match.md %})
-- [`if let`]({% link ch06_03_if_let.md %})
+- [`enum`](ch06_01_enums.md)
+- [`match`](ch06_02_match.md)
+- [`if let`](ch06_03_if_let.md)
