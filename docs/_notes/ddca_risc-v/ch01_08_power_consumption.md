@@ -3,7 +3,6 @@ title: "DDCA: 01.08 Power Consumption"
 tags: ddca computer_architecture
 
 ---
-# Power Consumption
 
 Power consumption is important for digital system, and has immediate applicability in the products that are created using these systems. Smart phones, and laptops need to be able to operate for many hours of the day.
 
