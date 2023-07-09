@@ -20,7 +20,7 @@
 
 # Build settings
 remote_theme: "https://github.com/waridh/minimal-mistakes"
-minimal_mistakes_skin: "contrast"
+minimal_mistakes_skin: "neon"
 
 locale              : "en-US"
 
