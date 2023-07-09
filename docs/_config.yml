@@ -147,7 +147,6 @@ defaults:
       toc: true
       header:
         image: /assets/images/site_header.png
-        teaser: /assets/images/site_header.png
   - scope:
       path: ""
       type: notes
@@ -160,7 +159,6 @@ defaults:
       toc: true
       header:
         image: /assets/images/splash_page.png
-        teaser: /assets/image/splash_page.png
 
 
 include:
