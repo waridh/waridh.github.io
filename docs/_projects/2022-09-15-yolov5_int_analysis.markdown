@@ -6,6 +6,7 @@ categories: project CST CV
 excerpt: "Computer vision project where location and trajectory of object has to be mapped."
 header:
   image: /assets/images/yolov5_int_analysis/yolodetectiontraffic.png
+  teaser: /assets/images/yolov5_int_analysis/yolodetectiontraffic.png
 ---
 
 ## Overview

@@ -3,7 +3,9 @@ layout: single
 title: "Data Rate Voxelization"
 date: 2022-11-01 12:00:00 -0700
 categories: project CST pointcloud
-excerpt_separator: <!--more-->
+header:
+  image: /assets/images/sensor_vox/single_sensor_scan.jpg
+  teaser: /assets/images/sensor_vox/single_sensor_scan.jpg
 ---
 
 ## Motivation
