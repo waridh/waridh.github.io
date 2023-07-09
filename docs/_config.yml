@@ -83,6 +83,7 @@ lunr:
   search_within_pages: true
 
 paginate    : 3
+paginate_path: /blog/page:num
 
 google_site_verification: "googlebee16fba23adfa23"
 
