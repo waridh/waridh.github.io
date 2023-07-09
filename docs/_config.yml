@@ -110,6 +110,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _posts
@@ -143,7 +146,19 @@ defaults:
       share: true
       toc: true
       header:
-        image: "/assets/images/site_header.png"
+        image: /assets/images/site_header.png
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      show_date: true
+      share: true
+      toc: true
+      header:
+        image: /assets/images/splash_page.png
 
 
 include:

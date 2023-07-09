@@ -1,7 +1,7 @@
 ---
 title: "Notes"
-layout: single
-author_profile: true
+layout: collection
+collection: notes
 permalink: /notes/
-excerpt: "Learning notes I take for the world to see!"
+excerpt: "Learning notes I take. Left here for the world to see!"
 ---
