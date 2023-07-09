@@ -114,9 +114,6 @@ collections:
   notes:
     output: true
     permalink: /:collection/:path/
-  ocaml:
-    output: true
-    permalink: /notes/:collection/:path/
 
 relative_links:
   enable: true
@@ -166,14 +163,7 @@ defaults:
       share: true
       show_date: true
       toc: true
-  - scope:
-      path: ""
-      type: ocaml
-    values:
-      categories: notes
-      header:
-        image: /assets/images/ocaml_teaser.png
-        teaser: /assets/images/ocaml_teaser.png
+ 
  
 
 
