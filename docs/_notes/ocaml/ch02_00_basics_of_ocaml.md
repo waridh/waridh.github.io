@@ -5,8 +5,6 @@ categories: notes programming
 topic: cs3110
 ---
 
-# The Basics of OCaml
-
 There are five essential components to learning a new language
 
 ## 1. Syntax
@@ -15,11 +13,11 @@ The rules that define what constitute a textually well-formed program. This incl
 
 ## 2. Semantics
 
-Rules that define the behaviour of a program. It's about the meaning of the program. There are two pieces of semantics: dynamic and static.
+Rules that define the behavior of a program. It's about the meaning of the program. There are two pieces of semantics: dynamic and static.
 
 ### Dynamic Semantics
 
-Run-time behaviour of the program as it is executed or evaluated. Compile time checking makes sure that the program is legal, beyond any syntactic requirements.
+Run-time behavior of the program as it is executed or evaluated. Compile time checking makes sure that the program is legal, beyond any syntactic requirements.
 
 ### Static Semantics
 
@@ -37,3 +35,6 @@ Pre-written codes. Use the operating systems definition. Less writing, means mor
 
 Other than just the compiler and the interpreter, you also have access to debuggers, IDEs and analysis tools for things like performance, memory usage, and correctness.
 
+***
+
+All of these components are covered thoroughly in this class.

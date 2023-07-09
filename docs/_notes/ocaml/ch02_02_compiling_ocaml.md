@@ -1,10 +1,8 @@
 ---
 title: "CS3110 02.02 Compiling an OCaml Program"
 layout: single
-
+topic: cs3110
 ---
-
-# Compiling an OCaml Program
 
 ## Compilation
 
@@ -76,6 +74,3 @@ dune clean
 ```
 
 `dune clean` will get rid of all the build clutter.
-
-| [Previous](ch02_01_toplevel.md) | [Next](ch02_03_expressions.md) | 
-| ------------------------------- | ------------------------------ |

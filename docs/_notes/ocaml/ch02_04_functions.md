@@ -1,9 +1,8 @@
 ---
 title: "CS3110 02.04 Functions"
 tags: ocaml
-layout: single
+topic: cs3110
 ---
-# 2.4 Functions
 
 ## 2.4.1 Function Definitions
 

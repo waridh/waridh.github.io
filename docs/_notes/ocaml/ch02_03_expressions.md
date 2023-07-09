@@ -2,14 +2,16 @@
 title: "CS3110 02.03 Expressions"
 layout: single
 tag: ocaml
+topic: cs3110
 ---
-# Expressions
+
 
 If imperative languages are primarily built on commands, then functional languages are primarily built on expressions. Some examples are `2 + 2` or `increment 21`.
 
 The primary purpose of functional languages is to *evaluate* an expression to a *value*. A value is an expression in which there are no more computations left to perform, meaning that in function programming, values are expressions, but not all expressions are values. For example `2`, `true`, and `"two!"` are values.
 
 There are some cases in which expressions do not evaluate to a value. There are two reasons that this would happen:
+
 1. The evaluation raised an exception
 2. The evaluation never terminates.
 

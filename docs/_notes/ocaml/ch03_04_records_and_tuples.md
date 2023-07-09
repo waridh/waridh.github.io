@@ -1,4 +1,7 @@
-# 3.4 Records and Tuples
+---
+title: "CS3110: 03.04 Records and Tuples"
+topic: cs3110
+---
 
 ## 3.4.1 Records
 
@@ -76,5 +79,3 @@ e.f
 #### Static Semantics
 
 The order of the record type does not matter. `{f: t1; g: t2}` is entirely equivalent to `{g: t2; f:t1}`. There is a type checking rule for records, but I do not think that it is important as of right now. Come back to 3110 if needed.
-
-
