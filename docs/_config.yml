@@ -111,9 +111,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
-  notes:
+  ocaml:
     output: true
-    permalink: /:collection/:path/
+    permalink: notes/:collection/:path/
 
 relative_links:
   enable: true
@@ -154,7 +154,7 @@ defaults:
         image: /assets/images/site_header.png
   - scope:
       path: ""
-      type: notes
+      type: ocaml
     values:
       layout: single
       author_profile: false
@@ -165,14 +165,8 @@ defaults:
       categories: notes
       header:
         image: /assets/images/splash_page.png
-  -
-    scope:
-      path: "/_notes/ocaml"
-    values:
-      categories: ocaml
-      header:
         teaser: /assets/images/ocaml_teaser.png
-        image: /assets/images/ocaml_teaser.png
+ 
 
 
 
