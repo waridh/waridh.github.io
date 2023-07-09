@@ -171,7 +171,8 @@ defaults:
     values:
       categories: ocaml
       header:
-        teaser: /assets/image/ocaml_teaser.png
+        teaser: /assets/images/ocaml_teaser.png
+        image: /assets/images/ocaml_teaser.png
 
 
 
