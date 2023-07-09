@@ -114,6 +114,9 @@ collections:
   notes:
     output: true
     permalink: /:collection/:path/
+  ocaml:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _posts
