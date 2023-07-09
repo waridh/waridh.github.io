@@ -2,6 +2,7 @@
 tags: cs3110 ocaml
 title: "CS3110 02.00 Basics of OCaml"
 categories: notes programming
+topic: cs3110
 ---
 
 # The Basics of OCaml
