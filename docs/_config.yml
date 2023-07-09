@@ -20,7 +20,7 @@
 
 # Build settings
 remote_theme: "https://github.com/waridh/minimal-mistakes"
-minimal_mistakes_skin: "contrast"
+minimal_mistakes_skin: "mint"
 
 locale              : "en-US"
 
@@ -40,7 +40,7 @@ teaser              : "/assets/images/meta/hello_summer_neon.jpg"
 
 logo                : "android-chrome-192x192.png"
 
-masthead_title      : "`|>`"
+masthead_title      : " "
 
 words_per_minute    : 200
 
