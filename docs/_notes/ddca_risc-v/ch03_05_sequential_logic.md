@@ -6,7 +6,7 @@ In asynchronous inputs, you cannot guarantee that the input will come in at a ti
 
 When a flip-flop takes an input reading and the input is changing during the aperture, then the output will be between $0$ and $V_{DD}$ and potentially be in the forbidden zone. When it is in this zone, then it is what is called *metastable*. The reason it is called metastable is that the output could be balanced on this state until something comes to push it to the stable state, and the duration in this state is unbounded, meaning it could be indefinite.
 
-![](../../../assets/Pasted%20image%2020230705140909.png)
+![](../../assets/Pasted%20image%2020230705140909.png)
 
 ## Resolution Time: $t_{res}$
 
@@ -28,7 +28,7 @@ Functionally, synchronizers will take an asynchronous input D, and a clock CLK. 
 
 A simple implementation is by using two flip-flops, and line them up as such:
 
-![](../../../assets/Pasted%20image%2020230705161831.png)
+![](../../assets/Pasted%20image%2020230705161831.png)
 
 I idea is that if you want long enough on the second flip-flop, it is likely that any metastable state that was created by the first flip-flop will fall back into a stable state. When the period is over, the second flip-flop will sample the input from the first flip-flop and it will be likely that the intermediate variable has fallen into a stable state by now. The second flip-flop will now product a good output $Q$.
 

@@ -1,3 +1,8 @@
+---
+title: "DDCA: 01.08 Power Consumption"
+tags: ddca computer_architecture
+
+---
 # Power Consumption
 
 Power consumption is important for digital system, and has immediate applicability in the products that are created using these systems. Smart phones, and laptops need to be able to operate for many hours of the day.
@@ -17,7 +22,7 @@ $$
 
 ### Clock diagram
 
-![](../../../assets/Pasted%20image%2020230618183400.png)
+![](../../assets/Pasted%20image%2020230618183400.png)
 
 In a), the signal is rising and falling once every clock signal. The activity factor for this signal is then 1. The clock period between rising edges is called $T_c$, and it is the reciprocal of the frequency $f$. In b), the signal is changing once every clock cycle, and thus, since there is only one activity per cycle, the $\alpha$ is set to 0.5, as half a rising, and half a falling. in c), the activity has moved on to once every other clock, and this will cause the $\alpha$ to be 0.25. You can think of $\alpha=1$ as when there are two changes in a single clock, and do that fractional math from there with rates and stuff.
 
@@ -41,7 +46,7 @@ A particular cell phone has an 8W-hr battery and operates at 0.707V. Suppose tha
 
 #### Answer
 
-![](../../../assets/powerex-5.jpg)
+![](../../assets/powerex-5.jpg)
 
 
 

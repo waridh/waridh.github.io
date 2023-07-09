@@ -134,7 +134,7 @@ So the little weird thing that is a little specific to HDLs is that the order of
 
 Since there are multiple mainstream HDL, it is a good habit to parenthesize the order of operations, since the default operation order could be different depending on the language.
 
-![](../../../assets/Pasted%20image%2020230703153327.png)
+![](../../assets/Pasted%20image%2020230703153327.png)
 
 ## 4.2.7 Numbers
 
@@ -171,7 +171,7 @@ What does that `4'bz` mean? It is written as 4 bits binary float, but what it ac
 
 Another thing to note is that a `tri` output from a module can be taken as a `logic` input in a different module.
 
-![](../../../assets/Pasted%20image%2020230703164128.png)
+![](../../assets/Pasted%20image%2020230703164128.png)
 
 If a gate receives a floating input or an illegal input, it might output an x if it cannot determine what the correct output value should be.
 
@@ -195,7 +195,7 @@ Delay of a gate produced by the synthesizer depends on its $t_{pd}$ and $t_{cd}$
 
 We are going to look at this Boolean equation again: $y=\bar{a}\bar{b}\bar{c} + a\bar{b}\bar{c} + a\bar{b}c$. That original function assumes that inverters have a delay of 1 ns, three-input AND gates have a delay of 2 ns, and three-input OR gates have a delay of 4 ns. The following figure shows that the output `y` has a lag of 7 ns.
 
-![](../../../assets/Pasted%20image%2020230703183401.png)
+![](../../assets/Pasted%20image%2020230703183401.png)
 
 At the beginning of the simulation, `y` will be initially unknown.
 

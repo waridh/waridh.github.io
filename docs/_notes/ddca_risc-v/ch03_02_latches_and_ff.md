@@ -10,7 +10,7 @@ Quick definition: When an output of an element goes into the input of another an
 
 Very simple sequential circuit, an SR latch is two cross-coupled NOR gates.
 
-![](../../../assets/Pasted%20image%2020230705172547.png)
+![](../../assets/Pasted%20image%2020230705172547.png)
 
 Functionally, it uses the set and reset signal to control the outputs of both $Q$ and $\bar{Q}$. Here is a little truth table for it:
 
@@ -35,12 +35,12 @@ Simpler to have a little example in the form of a truth table:
 | 1   | 0   | 0   | 1         |
 | 1   | 1   | 1   | 0         | 
 
-![](../../../assets/Pasted%20image%2020230705180621.png)
+![](../../assets/Pasted%20image%2020230705180621.png)
 
 ## 3.2.3 D Flip-Flop
 
 So what makes a flip flop different? First of all a d flip-flop is made from two back to back latches, and functionally, it was designed to improve synchronization and reduce erratic behaviour by allowing state changes to occur during some edge of the clock signal.
 
-![](../../../assets/Pasted%20image%2020230705181439.png)
+![](../../assets/Pasted%20image%2020230705181439.png)
 
 

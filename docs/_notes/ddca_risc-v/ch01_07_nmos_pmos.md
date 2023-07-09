@@ -2,7 +2,6 @@
 title: "DDCA: 01.07 nMOS and pMOS"
 layout: single
 ---
-# 4. nMOS and pMOS Transistors
 
 ## What are MOSFETs
 

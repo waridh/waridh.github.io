@@ -19,7 +19,7 @@ endmodule
 
 So there are three `mux2` instances here, `lowmux`, `highmux`, and `finalmux`. The `mux2` module needs to be defined elsewhere in the SystemVerilog code.
 
-![](../../../assets/Pasted%20image%2020230703194233.png)
+![](../../assets/Pasted%20image%2020230703194233.png)
 
 This is the resulting schematics. The thing to note here is that we are actually working with four four bit busses, and not just four 1 bit signals. Each occurrence of a mux2 here is called an instance. Think objects and classes. Modules are like a hybrid between classes and functions.
 
