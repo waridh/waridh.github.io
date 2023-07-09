@@ -120,7 +120,7 @@ defaults:
       share: true
       toc: true
       header:
-        teaser: /assets/images/meta/neon_wall.jpg
+        teaser: "/assets/images/meta/neon_wall.jpg"
 
   - scope:
       path: ""

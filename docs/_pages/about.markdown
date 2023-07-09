@@ -3,7 +3,7 @@ layout: single
 title: About
 author_profile: true
 permalink: /about/
-excerpt_separator: <!--more-->
+excerpt: "My name is Bach, nice to meet you!"
 ---
 
 ## Overview
