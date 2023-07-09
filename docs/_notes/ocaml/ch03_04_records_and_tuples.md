@@ -1,6 +1,7 @@
 ---
 title: "CS3110: 03.04 Records and Tuples"
 topic: cs3110
+teaser: /assets/images/ocaml_teaser.png
 ---
 
 ## 3.4.1 Records
