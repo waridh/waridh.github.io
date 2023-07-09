@@ -115,6 +115,10 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+relative_links:
+  enable: true
+  collections: false
+
 defaults:
   # _posts
 

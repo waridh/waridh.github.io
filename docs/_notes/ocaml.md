@@ -1,7 +1,0 @@
----
-title: "Learning OCaml" 
-date: 2023-04-10 12:00:00 -0600
-layout: collection
-collection: ocaml
-permalink: /notes/ocaml/
----
