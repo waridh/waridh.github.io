@@ -1,11 +1,19 @@
-# 4.6 Finite State Machine
+---
+title: "DDCA: 04.06 Finite State Machines"
+topic: ddca
+---
+
+## 4.6.0 Finite State Machines
 
 FSM requires a state register to track the state and two combinational logic block to move the machine into the next state and the output given the current state and input.
 
-HDLs model the state machine by splitting it into three part.
-1. The state register
-2. The next state logic
-3. The output logic
+HDLs model the state machine by splitting it into three part:
+
+1. **The state register**
+2. **The next state logic**
+3. **The output logic**
+
+### Divide by three finite state machine implemented on SystemVerilog
 
 ```SystemVerilog
 module divideby3FSM(
