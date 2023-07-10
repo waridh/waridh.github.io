@@ -138,3 +138,40 @@ Nets are the other major data type to be aware of. There is `wire` and `net`. In
 | `trior` | `z` | 1 if at least one 1 input (OR) |
 | `tri0` | 0 | `x` |
 | `tri1` | 1 | `x` |
+
+
+### Signed and Unsigned inputs
+
+You really just need to example to understand the syntax. SystemVerilog will assume unsigned by default.
+
+```SystemVerilog
+// Unsigned multiplier
+module multiplier(input logic [3:0] a, b,
+                  output logic [7:0] y);
+
+assign y = a * b;
+endmodule
+
+// Signed multiplier
+module signed_multiplier(input logic signed [3:0] a, b,
+                          output logic signed [7:0] y);
+assign y = a * b;
+endmodule
+```
+
+## 4.8 Parameterized Modules
+
+Two main concepts in this chapter. Parameterized modules and the `generate` statement. The basic concept here is that you can have variable width bus as the input and output using the parameterized statement. When assigning the parameterized statement, you have to also set a default value which the module would take regularly. Here is an example in declaring the parameterized module:
+
+```SystemVerilog
+module mux2
+  #(parameter width = 8)
+    (input logic [width-1:0] d0, d1,
+    input logic                 s,
+    output logic [width-1:0] y);
+
+  assign y = s ? d1 : d0;
+
+endmodule
+
+```
