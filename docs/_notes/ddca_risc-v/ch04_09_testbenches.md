@@ -23,7 +23,7 @@ The following are example code for both:
 
 ### Self-checking Testbench
 
-```SystemVerilog
+```
 module testbench2();
 // Instantiate the variables
   logic a, b, c, y;
@@ -72,7 +72,7 @@ This method took a lot of writing, so it might be more scalable to use the follo
 
 #### Testing Module
 
-```SystemVerilog
+```
 module testbench3();
   logic clk, reset;
   logic a, b, c, y, yexpected;
