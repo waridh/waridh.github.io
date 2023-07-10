@@ -9,5 +9,6 @@ This textbook is the all inclusive suite to get from know nothing about digital 
 
 ## Table of Contents
 
-- [Chapter 1]()
+- **Chapter 1**
     - [Chapter 1.7: MOSFETs](ch01_07_nmos_pmos.md)
+    - [Chapter 1.8: Power Consumption](ch01_08_power_consumption.md)
