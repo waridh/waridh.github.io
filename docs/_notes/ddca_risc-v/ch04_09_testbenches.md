@@ -117,3 +117,9 @@ module testbench3();
       end
     end
 ```
+
+After some testing, it is found that you should be abusing for loops in order to quickly automate your input. By doing this, you can also quickly write out your debugging information.
+
+### Note with Vivado
+
+There is a new bigger can of worm to deal with when using vivado to do your testing. Essentially, the notes taken above does not work exactly like entailed, since asserts and error counts will not work using simulation. Otherwise, it's pretty similar to the first example, only that we use more for loops. (Just be cleaver programmer, you should be fine.) The TODO that we just got now is understanding Vivado constraints. The one benefit of this is that it uses Tcl as the language, and I happen to know Tcl.
