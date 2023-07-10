@@ -163,6 +163,8 @@ endmodule
 
 Two main concepts in this chapter. Parameterized modules and the `generate` statement. The basic concept here is that you can have variable width bus as the input and output using the parameterized statement. When assigning the parameterized statement, you have to also set a default value which the module would take regularly. Here is an example in declaring the parameterized module:
 
+### Declaring a 2:1 MUX with parameterized input
+
 ```SystemVerilog
 module mux2
   #(parameter width = 8)
@@ -173,5 +175,48 @@ module mux2
   assign y = s ? d1 : d0;
 
 endmodule
-
 ```
+
+You can then use this module like a regular module with an 8-bit bus width, or you can use the parameterized module feature and override the bus width. Here is an example in overriding that bus width:
+
+### Calling Parameterized Module for 12-bit width bus 4:1 MUX
+
+```SystemVerilog
+module mux4_12( input logic [11:0] d0, d1, d2, d3,
+                input logic [1:0] s,
+                output logic [11:0] y);
+
+logic [11:0] low, hi;
+
+mux2 #(12) lowmux(d0, d1, s[0], low);
+mux2 #(12) himux(d2, d3, s[0], hi);
+mux2 #(12) outmux(low, hi, s[1], y);
+endmodule
+```
+
+Generally, parameterized modules are useful when the module would require a lot of cases or conditionals otherwise. It would save time writing those individual cases out.
+
+The further expand on to this, we have `generate` which will allow the production of a variable amount of hardware. You are able to use a for loop with this statement. On things like N-input AND statements, these are very useful to reduce hardcoding. Here is an example of writing a cascading AND gate:
+
+### N-input AND gate using Generate
+
+```SystemVerilog
+module andN
+  #(parameter width=8)
+  (input logic [width-1:0]a,
+  output logic y);
+
+  genvar i;
+  logic [width-1:0] x;
+
+  generate
+    assign x[0] = a[0];
+    for (i=1; i < width; i = i + 1) begin: forloop
+      assign x[i] = a[i] & x[i-1];
+    end
+  endgenerate
+  assign y = x[width-1];
+endmodule
+```
+
+One thing to note is that it is very easy to generate a large amount of hardware, so you should do proper testing and inspection before saying that you are done when working with generate.
