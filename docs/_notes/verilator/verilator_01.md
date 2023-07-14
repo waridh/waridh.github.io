@@ -50,7 +50,6 @@ make -j8 -f Someprefix.mk Someprefix
 
 Where `-j8` is the amount of threads in the simulation, `-f` specify the makefile file, and `Someprefix.mk` is the makefile being read. `Someprefix` is the name of the executable that is being compiled.
 
-
 ## Note
 
 Please note this is written as I am just starting out with Verilator. If there are some mistakes worth fixing, please don't hesitate to contact me through my email.
