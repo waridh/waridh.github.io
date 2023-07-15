@@ -1,4 +1,9 @@
-# Data and Types
+---
+title: "CS3110: 03.00 Data And Types"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 Looking at the built in OCaml data types. The list of the types being covered are:
 
@@ -23,5 +28,6 @@ Some other types that are covered includes:
 - **exceptions**, which are a special kind of an algebraic data type.
 
 ## Index
+
 1. [Lists](ch03_01_lists.md)
 2. [Variants](ch03_02_variants.md)

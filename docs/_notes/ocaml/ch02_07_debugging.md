@@ -1,10 +1,16 @@
-# 2.7 Debugging
+---
+title: "CS3110: 02.07 Debugging"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 Debugging comes when everything else has failed. We are going to list the best practices that should be taken before debugging.
 
 ## 2.7.1 Defenses against bugs
 
 There are four main methods to defend your program against bugs:
+
 1. **Make bugs impossible** - Bugs that has to do with memory can be completely destroyed by choosing programming languages that are completely memory safe. Some of the programming languages that can achieve this are Rust, and OCaml. The exact same can be said with *type safety*.
 2. **Use tools that can find bugs** - There are automated source-code analysis tools that can find bugs. Some examples include *FindBugs* which does bug hunting on Java. *SLAM* is used to find bugs in device drivers. A subfield in CS known as *formal methods* studies how the use mathematics to specify and verify programs, which is to say, prove that there is no bugs in a mathematical way. *Social Methods* like paired programming are also useful tools to find bugs.
 3. **Make bugs immediately visible** - Bugs should be able to be delt with as they come up. It's much more efficient to deal with bugs as they appear as opposed to letting the program continue to run and the failure cascades into a different issue. Using assertions is a good way to make bugs appear fast and loud, reducing tracing time.

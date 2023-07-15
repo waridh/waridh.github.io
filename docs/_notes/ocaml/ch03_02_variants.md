@@ -1,6 +1,11 @@
-# Variants
+---
+title: "CS3110: 03.02 Variants"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
-Literally `enum`. Here is the syntax for them:
+Literally `enum` from other programming languages. Here is the syntax for them:
 
 ```OCaml
 type day = Sun | Mon | Tue | Wed | Thu | Fri | Sat

@@ -1,4 +1,9 @@
-# Documentation
+---
+title: "CS3110: 2.5 Documentation"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 ## 2.5.1 How to Document
 

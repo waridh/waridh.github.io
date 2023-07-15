@@ -1,4 +1,9 @@
-# Lists
+---
+title: "CS3110: 03.01 Lists"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 Conceptually, we know what a list is, but how is it done is OCaml? Lists in OCaml are implemented as a singly linked list. These list enjoy first class status in the language. There are a lot of macro supports for lists in OCaml, so it is easy to use.
 
@@ -294,4 +299,3 @@ And this is still all done tail recursively.
 
 | Previous | [Home](ch03_00_data_and_types.md) | [Next](ch03_02_variants.md) | 
 | -------- | --------------------------------- | --------------------------- |
-

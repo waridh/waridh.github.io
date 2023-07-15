@@ -50,3 +50,5 @@ let f p1 ... pn = e1 in e2  (* Function as a part of let expression *)
 let f p1 ... pn = e         (* Function definition *)
 fun p1 ... pn -> e          (* Anonymous functions *)
 ```
+
+Everything else with the semantics remain the same as before, please refer back to the previous chapter if you need clarifications on it.

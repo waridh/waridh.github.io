@@ -1,4 +1,9 @@
-# 2.6 Printing
+---
+title: "CS3110: 02.06 Printing"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 OCaml has a printing function that is built in. There are actually different print functions for all the different primitive types: `print_char`, `print_string`, `print_int`, and `print_float`. `print_endline` is just like print string, but it will also output a newline character at the end.
 

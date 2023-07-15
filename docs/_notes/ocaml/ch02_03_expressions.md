@@ -3,6 +3,8 @@ title: "CS3110 02.03 Expressions"
 layout: single
 tag: ocaml
 topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
 ---
 
 
