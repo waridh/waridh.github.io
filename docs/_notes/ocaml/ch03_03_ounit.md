@@ -1,4 +1,9 @@
-# 3.3 Unit testing with OUnit
+---
+title: "CS3110: 03.03 OUnit"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
 
 OUnit is the unit testing framework for OCaml. This is a solution for when your program gets too large for toplevel to test, and you need to design a test suite. Just like with device validation, your test suite needs to contain many unit tests that will test all the different functions and edge cases that your function might run into.
 
