@@ -48,7 +48,7 @@ words_per_minute    : 200
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/meta/portrait.jpg"
+  avatar           : "/assets/images/meta/drinking_at_beach_512_80.jpg"
   bio              : "Computer Engineering student trying to be good at both hardware and software."
   location         : "Burnaby, BC"
   links:
