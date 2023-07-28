@@ -74,7 +74,7 @@ $$
 C_i = G_{i:j} + P_{i:j}C_{j-1}
 $$
 
-So the benefit is that we can determine the carry out of this block and thus the carry in of the next block without having to go through the full adder circuit, thus, skipping bits of the chain, and getting the carry in of the next block quicker, but it is still in linear complexity as a more significant block will still need the carry out from a less significant block.
+So the benefit is that we can determine the carry out of this block and thus the carry in of the next block without having to go through the full adder circuit, thus, skipping much of the chain (Effectively only needing to go through two two-input gates). Even with the increased speed, it is still linear complexity as a more significant block will still need the carry out from a less significant block.
 
 Now the block still have to undergo some ripple-carry adders, inside, but there is less chaining in there now.
 
