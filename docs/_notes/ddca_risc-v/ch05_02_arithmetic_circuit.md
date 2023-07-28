@@ -1,5 +1,5 @@
 ---
-title: "Arithmetic Circuits"
+title: "DDCA: 05.02 Arithmetic Circuits"
 topic: ddca
 ---
 ## 5.2.1 Addition
