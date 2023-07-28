@@ -81,15 +81,15 @@ Now the block still have to undergo some ripple-carry adders, inside, but there 
 #### CLA Time Propagation
 
 $$
-t_{CLA}=t_{pg} + t_{pg_block}+\left( \frac{N}{k}-1\right)t_{AND_OR}+kt_{FA}
+t_{CLA}=t_{pg} + t_{pg\_block}+\left( \frac{N}{k}-1\right)t_{AND \_ OR}+kt_{FA}
 $$
 
 ##### Definitions
 - $$t_{pg}$$
   - This is the time for a column propagate and generate signal to be made (Done for all the columns at once).
-- $$t_{pg_block}$$
+- $$t_{pg\_block}$$
   - The time it takes to find a block generate or propagate signal.
-- $$t_{AND_OR}$$
+- $$t_{AND\_OR}$$
   - The final delay from carry in to carry out in a block level. This is just an AND gate and an OR gate.
 - $$t_{FA}$$
   - This is the full adder delay.
