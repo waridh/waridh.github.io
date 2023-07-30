@@ -38,3 +38,27 @@ A microarchitecture can be divided into two parts:
   - RISC-V uses 32-bit data path.
 
 Since CPUs are complex, we want to start the design process from the top down, which means starting with the state elements, since they control the flow of the architecture state and memory. After the state element has been created, blocks of combinational logic is added between these state elements so that the next state can be reached from the current state.
+
+- The instructions is usually read from another part of memory using load and store. This makes it convenient to separate the instructions from the data using partitions.
+
+![Program Counter Block diagram](../../assets/logic_parts/pc.png)
+
+![Instruction Memory](../../assets/logic_parts/instr_mem.png)
+
+This block takes an address input, and outputs the instruction located at that address through the read output. This block is combinational.
+
+![Register File](../../assets/logic_parts/reg_files.png)
+
+The register file allows reading and writing into the x32 32-bit registers. There are three addresses that correspond with the three IO.
+
+- There are two read ports with two corresponding address inputs, each being 5-bit wide in order to just be enough to index the 32 registers. Address 0 is hardwired to register x0. 
+- There is one write port that will input data to a register that is pointed to by `A3`. The write will only happen when the `CLK` is on its rising edge, and `WE3` write enable is active.
+  - If it's not rising edge, or the write enable signal is not active, writing does not happen. <!--This design makes a lot of sense.-->
+
+![Data Memory](../../assets/logic_parts/data_mem.png)
+
+*Data memory* only has a single read port, and one write port. It is designed with only one address input, meaning that it can only read or write at a single moment.
+
+- When the `WE` write enable signal is active, this block will write to data memory, else it is reading.
+
+The architecture state is a sequential circuit, but it is built on top of many combinational logic blocks, with the writing being the only portion that is controlled by a clock and an enable signal. This also means that the setup for the enable signal and the address and data input must be set-up before the clock edge, and must be stable for the hold time.
