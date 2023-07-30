@@ -1,6 +1,7 @@
 ---
 title: "DDCA: 04.09 Testbenches"
 topic: ddca
+excerpt: Some brief view on what test benches are, and how you can design them. Similar to unit tests in higher level programming.
 ---
 
 ## 4.9 Testbenches

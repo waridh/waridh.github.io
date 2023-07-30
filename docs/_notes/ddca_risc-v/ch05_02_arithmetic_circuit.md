@@ -1,6 +1,7 @@
 ---
 title: "DDCA: 05.02 Arithmetic Circuits"
 topic: ddca
+excerpt: The chapter that covers more complex arithmetic circuits.
 ---
 ## 5.2.1 Addition
 
@@ -93,3 +94,7 @@ $$
   - The final delay from carry in to carry out in a block level. This is just an AND gate and an OR gate.
 - $$t_{FA}$$
   - This is the full adder delay.
+
+### Prefix Adder
+
+This is a solution that is akin to doing a merge sort, but in the hardware level. It brings the process of addition down from linear time complexity to logarithmic complexity. This is a very good time save, but for the sake of doing top down studying of the topic, the explanation for this section will have to come after.

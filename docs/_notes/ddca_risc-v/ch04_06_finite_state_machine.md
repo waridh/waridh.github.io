@@ -1,6 +1,7 @@
 ---
 title: "DDCA: 04.06 Finite State Machines"
 topic: ddca
+excerpt: The finite state machine is a fundamental component of designing a digital system.
 ---
 
 ## 4.6.0 Finite State Machines

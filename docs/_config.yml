@@ -163,6 +163,7 @@ defaults:
       share: true
       show_date: true
       toc: true
+      excerpt: "Personal note for display"
  
  
 
