@@ -62,3 +62,25 @@ The register file allows reading and writing into the x32 32-bit registers. Ther
 - When the `WE` write enable signal is active, this block will write to data memory, else it is reading.
 
 The architecture state is a sequential circuit, but it is built on top of many combinational logic blocks, with the writing being the only portion that is controlled by a clock and an enable signal. This also means that the setup for the enable signal and the address and data input must be set-up before the clock edge, and must be stable for the hold time.
+
+## 7.1.3 Microarchitecture
+
+There are three different microarchitecture that is covered in this book:
+
+- *Single Cycle*
+  - The instructions are completed in a single cycle.
+  - Requires that the data and instruction memory are separate.
+  - Does not need non-architectural states.
+- *Multicycle*
+  - Instructions take more than one cycle to complete.
+  - Simpler instructions will complete faster, while more complex instructions could take more cycles.
+  - Data and instruction memory are combined.
+  - Can reuse hardware.
+  - Still execute instructions one at a time.
+- *Pipeline*
+  - Pipelines applied to single-cycle microarchitecture.
+  - Executes multiple instructions simultaneously.
+  - Need logic to handle the dependencies needed to run multiple instructions simultaneously.
+  - Requires non-architectural pipeline registers.
+  - Needs to access both the instruction and data memory in the same cycle, thus needs separate instructions and data caches.
+  - The choice for modern high-performance processors.
