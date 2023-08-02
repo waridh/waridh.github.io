@@ -35,3 +35,4 @@ Here is what the program is doing:
 1. Load memory location `0x2004-4` into register `x6`. This means that `x6` now holds the value `10`
 2. Store the value `10` from `x6` into memory location `0x2004+8`. `0x200C` now has the value of `10`.
 3. `0b00000110` | `0b00001010` which is equal to `0b00001110` which is `14`, stored in register `x4`.
+4. `beq` is comparing the same registers, so it will always equal true. This means that the program counter goes back to `L7` and the program loops forever.
