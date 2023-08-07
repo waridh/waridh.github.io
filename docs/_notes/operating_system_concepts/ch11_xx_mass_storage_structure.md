@@ -24,9 +24,7 @@ To understand why some queuing algorithms exist, you must first understand the a
 
 - **Spindle**: The center axle that the magnetic disks are resting on.
 - **Arm**: like a record player arm. It moves the Read-Write Head to the sector that the data it needs to read is stored.
-
 - **Read-Write Head**: the tip of the arm that is used to read the magnetic disks. Think of the head of a record player.
-
 - **Tracks**: Singular circumference on a single magnetic disk. These are what the data are stored on.
 - **Cylinder**: Since there are many magnetic disks stacked on a singular spindle, a cylinder that the tracks that are vertically overlapping.
 - **Sector**: A subdivision of a track. This is the smallest unit of transferable data on an HDD, and it usually ranges from 512B to 4KB.
@@ -59,7 +57,7 @@ NAND flash can be read and written on page increments, but data cannot be direct
 - When a block of invalid page has formed, the NAND controller will erase this block.
 - The flash translation layer is used by the controller to keep track of which pages are good, and which are invalid data.
 
-There are some extra cases that are designed for when the NAND flash still has some storage remaining, but there is no invalid block to erase. This case handling is called **Garbage Collection** and it requires that the manufacturer allocate around 20% extra storage to the NAND flash device, which is called **over-provisioning**. To reiterate the problem, NAND flash devices cannot write new data to a page that already has data, so the pre-existing data must be erased before it can be written to. In this scenario where there isn't a fully invalid block that can be erased, garbage collection will copy the block into the **Over-provisioned** area, so that the controller will know what was in the block prior. The controller then erases the original block, and write the updated version with both the new data and the old valid data into that block.
+There are some extra cases that are designed for when the NAND flash still has some storage remaining, but there is no invalid block to erase. This case handling is called **Garbage Collection**, and it requires that the manufacturer allocate around 20% extra storage to the NAND flash device, which is called **over-provisioning**. To reiterate the problem, NAND flash devices cannot write new data to a page that already has data, so the pre-existing data must be erased before it can be written to. In this scenario where there isn't a fully invalid block that can be erased, garbage collection will copy the block into the **Over-provisioned** area, so that the controller will know what was in the block prior. The controller then erases the original block, and write the updated version with both the new data and the old valid data into that block.
 
 Here are some notes about operation speed:
 
