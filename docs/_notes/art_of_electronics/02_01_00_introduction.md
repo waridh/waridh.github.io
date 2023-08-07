@@ -1,7 +1,8 @@
 ---
+title: "Introduction to Bipolar Transistors"
 tags: transistor, bjt, electronics
+topic: aoe
 ---
-# Introduction to Bipolar Transistors
 
 ## What are Transistors
 
@@ -38,4 +39,3 @@ Transistors are a bit harder to learn the first time because they are three term
 
 - [1. First Transistor Model: Current Amplifiers](02_01_01_current_amplifiers.md)
 - []()
-
