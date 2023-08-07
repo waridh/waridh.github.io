@@ -73,10 +73,69 @@ Here are some notes about operation speed:
 
 Some space when storing data is used for error-correcting code, which helps the controller detect if there are corrupted data, and be able to attempt to self correct.
 
-## Volatile Memory
+### Volatile Memory
 
 Sometimes, volatile memory is used as a temporary file system that is useful for programs to store temporary data, or communicate with another program. These **RAM drives** can be carved out by a device driver from the DRAM, and it will allow the system to use this section exactly like a persistent drive with a file system (standard file operations).
 
 On linux, there is `/dev/ram`, on macOS we have `diskutil` to create this, and on windows, you need to use a third party tool to make them. `/tmp` is a RAM drive on Linux.
 
 RAM drives are excellent high-speed temporary storage, thus they are also the best way to create, read, write and delete files.
+
+### Secondary Storage connection method
+
+There are protocols that allow connection between the host and drives. The following is a list of some common protocols:
+
+- **SATA**: Also known as serial advanced technology attachment. This is the most widely used consumer protocol. It allows for 6G bit transfer rate using 8b10b encoding.
+- **SAS**: This protocol is mostly used in enterprise, and it is compatible with SATA drives. The latest products of these types support 22.5G bit transfer rate, and uses 128b150b encoding, which provides better efficiency in the data transfer while providing ECC and CRC.
+- **USB**: This protocol allows universal communication with many devices. The new USB-C protocols like thunderbolt are able to transfer data at up to 40Gbps.
+- **NVMe**: Non-volatile memory express uses PCIe lanes to transfer data. This method of interfacing provides much better bandwidth, and is the cutting edge solution for consumer level storage communications.
+
+Data transfer is done through a controller, (also known as a host bus adapter) which is a device that is connected to the host, and allows communication with the drives. The drives themselves have a device controller, which manages the data on the drives, and allows the host to read and write to the drives.
+
+The host sends a command to the HBA usually using memory mapped IO ports, and the HBA will send a command to the device controller. The device controller then reads the data from the storage media, and keep it in its cache. The data from the cache is then sent to the HBA, where the HBA cache and host DRAM is interchanged using DMA.
+
+### Address Mapping
+
+The addressing of the storage devices are done as a large one-dimensional array or logical blocks.
+
+- A logical block is the smallest unit of transfer.
+
+This one dimensional array of logical block is translated into pages or sectors on a physical drive. By design, the logical block address will attempt to map sequentially to the physical address such the adjacent logical block address would likely entail adjacent physical address. This layer of translation allows a compatibility layer for storage algorithms which makes them compatible with both HDDs and SSDs, while also providing a little more abstractions.
+
+The translation isn't perfect however, and it is because of the following three reasons:
+
+1. Sectors and pages may fail, but LBA will hide this from the system by remapping the logical address to a working page/sector. This process will create small sections of non-sequential mapping to appear.
+2. Some HDDs do not have a constant number of sectors per track. This prevents accurate mapping without knowing the exact amount of sectors per track for every track.
+3. The physical manufacturer does the LBA mapping internally, and thus sometimes, this information is not disclosed to other developers.
+
+#### CLV and CAV
+
+The front end of a hard-drive has to remain constant, in that they must be able to transfer data at a constant rate. Since there are differing design decisions when it comes to how many sectors are in a track, the mechanics must be adjusted.
+
+1. **CLV**: In one design decision, the bit density per track remain constant. This causes the outer tracks to hold more data than the inner tracks. The benefit of doing this, is that you would be able to maximize the amount of storage on a given HDD. The design issue that arises here though is that to keep data transfer constant throughout the drive, the rotation speed has to change depending on the track that you are reading. When using this design, outer tracks will hold up to 40% more data than the inner tracks.
+2. **CAV**: To eliminate variable rotational speed, some drives will have the same amount of bits on every track. This means that the outer tracks are less dense than the inner track.
+
+As with all technology, the capacity of drives are ever-increasing.
+
+## 11.2 HDD scheduling
+
+The goal of HDD scheduling is to reduce the seek time and rotational delay. This can be accomplished by changing up the data transfer queue. Let's get into some of the algorithms that are used.
+
+When IO is happening to a drive, there are some information that the host system must send to the HBA.
+
+- If the operation is an input or an output.
+- The open file handle for the file that is being operated on.
+- What the memory address for the transfer is.
+- Amount of data to transfer.
+
+Here is a list of goals that are trying to be achived by HDD scheduling:
+
+- **Fairness**
+- **Timeliness**
+- **Optimization**
+
+### First Come First Serve
+
+This algorithm does not work well on HDDs. The reasoning is that you will have cases where the head will have to jump from the inner zone to the very outer zone, and jump back.
+
+In an example where the initial head location is on track `53`, and the queue is `98, 183, 37, 122, 13, 124, 65, 67`. In a FCFS algorithm, you'd have 
