@@ -59,8 +59,24 @@ NAND flash can be read and written on page increments, but data cannot be direct
 
 There are some extra cases that are designed for when the NAND flash still has some storage remaining, but there is no invalid block to erase. This case handling is called **Garbage Collection**, and it requires that the manufacturer allocate around 20% extra storage to the NAND flash device, which is called **over-provisioning**. To reiterate the problem, NAND flash devices cannot write new data to a page that already has data, so the pre-existing data must be erased before it can be written to. In this scenario where there isn't a fully invalid block that can be erased, garbage collection will copy the block into the **Over-provisioned** area, so that the controller will know what was in the block prior. The controller then erases the original block, and write the updated version with both the new data and the old valid data into that block.
 
+Another major problem with NAND flash devices is that the pages have a limited lifespan, and can only survive limited erase cycles before they start to fail. The two systems put in place to deal with this interaction is over-provisioning and controller write algorithm.
+
+- What happens is that the controller will try to write to all the pages evenly, and not put too much focus on a single page, or block, as that would cause blocks to fail faster.
+- Once blocks do fail, blocks from the over-provisioned space will be used to replace the failed blocks.
+
 Here are some notes about operation speed:
 
 - **Read**: The fastest operation on a NAND flash device.
 - **Write**: Slower than read, but still relatively fast.
 - **Erase**: The slowest operation.
+- **Garbage Collection**: Garbage Collection writes are very slow, as it requires the controller to read the blocks, and write it in the over-provisioned space, then read those blocks again, and write it back down with the updated pages. This might have to be done multiple times for a single write, as the available space might be spread out.
+
+Some space when storing data is used for error-correcting code, which helps the controller detect if there are corrupted data, and be able to attempt to self correct.
+
+## Volatile Memory
+
+Sometimes, volatile memory is used as a temporary file system that is useful for programs to store temporary data, or communicate with another program. These **RAM drives** can be carved out by a device driver from the DRAM, and it will allow the system to use this section exactly like a persistent drive with a file system (standard file operations).
+
+On linux, there is `/dev/ram`, on macOS we have `diskutil` to create this, and on windows, you need to use a third party tool to make them. `/tmp` is a RAM drive on Linux.
+
+RAM drives are excellent high-speed temporary storage, thus they are also the best way to create, read, write and delete files.
