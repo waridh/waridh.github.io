@@ -12,9 +12,9 @@ This chapter covers the basics of how HDD and SSDs work, along with how the oper
 
 ## Definitions
 
-- **HDD** - Hard Disk Drives
-- **SSD** - Solid State Drives
-- **NVM** - Non-volatile memory
+- **HDD**: Hard Disk Drives
+- **SSD**: Solid State Drives
+- **NVM**: Non-volatile memory
 
 ## 11.1 Overview of Mass-Storage Structures
 
@@ -22,14 +22,14 @@ This chapter covers the basics of how HDD and SSDs work, along with how the oper
 
 To understand why some queuing algorithms exist, you must first understand the anatomy of a hard disk. Here are some definitions:
 
-- **Spindle** - The center axle that the magnetic disks are resting on.
-- **Arm** - like a record player arm. It moves the Read-Write Head to the sector that the data it needs to read is stored.
+- **Spindle**: The center axle that the magnetic disks are resting on.
+- **Arm**: like a record player arm. It moves the Read-Write Head to the sector that the data it needs to read is stored.
 
-- **Read-Write Head** - the tip of the arm that is used to read the magnetic disks. Think of the head of a record player.
+- **Read-Write Head**: the tip of the arm that is used to read the magnetic disks. Think of the head of a record player.
 
-- **Tracks** - Singular circumference on a single magnetic disk. These are what the data are stored on.
-- **Cylinder** - Since there are many magnetic disks stacked on a singular spindle, a cylinder that the tracks that are vertically overlapping.
-- **Sector** - A subdivision of a track. This is the smallest unit of transferable data on an HDD, and it usually ranges from 512B to 4KB.
+- **Tracks**: Singular circumference on a single magnetic disk. These are what the data are stored on.
+- **Cylinder**: Since there are many magnetic disks stacked on a singular spindle, a cylinder that the tracks that are vertically overlapping.
+- **Sector**: A subdivision of a track. This is the smallest unit of transferable data on an HDD, and it usually ranges from 512B to 4KB.
 
 ### Problems with HDD
 
@@ -39,8 +39,8 @@ To reduce latency, data are stored sequentially as it will also reduce the amoun
 
 The two delays caused by the mechanical nature of HDD are called:
 
-- **Seek time** - The time it takes for the head to get to the right track.
-- **Rotational latency** - The time it takes for the right sector to rotate to the head.
+- **Seek time**: The time it takes for the head to get to the right track.
+- **Rotational latency**: The time it takes for the right sector to rotate to the head.
 
 Some HDDs will have flash memory that will act as a cache for better performance.
 
@@ -63,6 +63,6 @@ There are some extra cases that are designed for when the NAND flash still has s
 
 Here are some notes about operation speed:
 
-- **Read** - The fastest operation on a NAND flash device.
-- **Write** - Slower than read, but still relatively fast.
-- **Erase** - The slowest operation.
+- **Read**: The fastest operation on a NAND flash device.
+- **Write**: Slower than read, but still relatively fast.
+- **Erase**: The slowest operation.
