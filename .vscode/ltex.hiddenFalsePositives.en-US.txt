@@ -1,0 +1,1 @@
+{"rule":"ABLE_TO_PASSIVE","sentence":"^\\QSoft error are errors that are able to be corrected, while\\E$"}
