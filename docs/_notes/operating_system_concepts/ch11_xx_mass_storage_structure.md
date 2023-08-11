@@ -1,6 +1,6 @@
 ---
-title: "OSE: 11.XX Mass-Storage Structure"
-topic: ose
+title: "OSC: 11.XX Mass-Storage Structure"
+topic: osc
 categories: notes
 tags: osc storage
 excerpt: "The fundamental components of storage systems."
@@ -366,3 +366,19 @@ Secondary storage access comes in three different methods:
         - Storage arrays usually have a controller and some memory, effectively making it a specialized computer.
         - Some storage arrays will have software that assists in storage management.
         - Might have features like: encryption, compression, RAID, replication, deduplication, and others.
+
+## 11.8 RAID
+
+I have read RAID over and over and over, so here is a table that simplifies what it is.
+
+RAID exists because of several reasons:
+
+- **Redundancy** - The more drives that you have, the more likely that one of them are going to fail. This is just probability.
+- **Performance** - In many instances, the bandwidth of a single HDD using SATA will be a bottleneck in some process or system. Some RAID level gets past these limitations.
+- **Pooling** - The simple case. You want to pool the storage from many drives into a single location for easier access, and better utilization.
+
+| Type | Description |
+| --- | --- |
+| RAID 0 | Striped raid array. Data is written and read across all the drives that are a part of the array at once. This gives increased speed, but this RAID level does not provide any protection against drive failures. The stripe IO usually works by sending a block to the different drives from a file. |
+| RAID 1 | Mirrored array. For all drives, there is a mirror present. If one drive fails, there is a mirror ready to be used. You can then place a new drive in, and it would become mirrored. Very strong fault tolerance, but wastes storage. Writes take twice as long, and might need a cache to confirm what the base is in case there are some failures during writing. Reads are faster than no RAID since there is a mirror drive with the same data available. |
+RAID 4 | Parity
