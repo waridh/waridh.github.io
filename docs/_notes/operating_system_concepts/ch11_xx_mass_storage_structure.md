@@ -262,3 +262,107 @@ Here is a bootstrap program example on Windows. There will be a partition on Win
 - The MBR also contains information about the partitions for the drive, and flag the boot partition.
 
 Once the system found the boot partition, it will read the first block from that, which directs it to the OS kernel.
+
+### 11.5.3 Bad Blocks
+
+Disks are prone to failure. Sometimes, the disk fails in a way where it is not necessary to replace the entire drive. To get around this type of failures, hardware and software solutions are developed.
+
+Older disks need to handle bad blocks manually. One method is to scan for bad blocks, and then locking them. This usually result in the lost of the data in those blocks.
+
+With increase in sophistication, bad-block recovery and management is improved by doing the following:
+
+- Drive controller keep a list of bad blocks on the disk.
+    - The list is initialized in the low-level formatting.
+- The list of bad-blocks is updated over the life of the disk.
+- Like over-provisioning on SSDs, the low-level formatting will set aside some spare sectors that are not made visible to the operating system.
+- Bad sectors are then replaced by logically remapping them to these new spare sectors.
+    - This is called **sector sparing**/**forwarding**.
+
+The downside of using sector sparing is that it could ruin the efficiency of some disk scheduling algorithms. To aid with this issue, the manufacturer will put spare sectors in all cylinders. The controller will then replace the bad sector with the closest spare sector (the same cylinder if possible).
+
+An alternative to sector sparing is **sector slipping** where all the sectors between the bad sector and the spare sector gets pushed away from the bad sector and occupy the spare sector. This is done by copying the sector next to the spare sector into the spare sector, and copying the next block into the block that just got copied.
+
+For example, if sector 17 has gone bad, and sector 202 is the closest spare sector, the data from sector 201 is copied into 202, and then 200 into 201,... until sector 18 is free. Then the logical mapping of sector 17 now maps to sector 18.
+
+Recoverable soft errors will recover itself automatically, but a hard error will result in actual loss of data, and require manual intervention.
+
+When an SSD has a bad-block, it just gets mapped into the over-provisioned area, and the bad-block is added to the bad-block list in the controller.
+
+## 11.6 Swap-Space Management
+
+Part of the multiprocessing infrastructure, a swap space is where processes or pages that are getting swapped out of the physical memory will reside. The rudimentary implementation is to swap out whole processes into the swap-space, but this is old technology. Modern systems will incorporate swap-spaces with virtual memory technology, swapping pages instead of entire processes.
+
+- Drive access is much slower than memory access, so the number of transfer with the drive should be reduced.
+
+### 11.6.1 Swap-Space Use
+
+- Process swapping systems will just use the swap space for holding entire processes, including with the code segment and the data segment.
+- Paging system will use the space to store pages that have been pushed out of the main memory.
+
+The amount of disk space needed for the swap space changes depending on the size of the physical memory and the size of the virtual memory. Over estimating the amount of space is better than underestimating, as it can lead to process termination or system crashes. Secondary storage space is relatively inexpensive, so wasting a little more is not as much of a big deal.
+
+Here are some swap space allocations that are recommended by popular operating systems:
+
+- Solaris recommends the swap space be equal to the differential of the virtual memory and the physical memory.
+- Linux used to suggest that the swap space should be twice the size of the physical memory, but now it does not use that much.
+
+System like Linux allows for the swap-space to be both a file based one, and a dedicated swap partition. To take full advantage of the system, put the swap space on separate drives to reduce IO load.
+
+
+### 11.6.2 Swap-Space Location
+
+There are two ways to set-up a swap space:
+
+- Place it in the file system.
+    - Simply acts as a large file, and benefits from the file system routines.
+- Create a dedicated swap partition on the disk.
+    - By using a raw partition, there is no overhead from having a file-system or directory structure.
+    - The swap partition has its own manager that controls allocation and deallocation of blocks.
+    - The manager is optimized for speed instead of storage efficiency, due to being used as a part of the primary memory infrastructure.
+    - Some internal fragmentation in the swap space is not a critical issue as data stored in the swap space has a short life-span.
+
+The swap space partition is fixed sized, and if more space needs to be allocated, the disk would need to be repartitioned or a new swap partition would need to be created.
+
+Linux can have both swap partitions and a file system partition at the same time. To optimize this, put the two swap space on different drives to improve IO bandwidth.
+
+### 11.6.3 Swap space notes
+
+- If a code segment of a process is being pushed out of memory, it should not be written to the swap space because it's more efficient to just read from the original location.
+    - The swap space should really only be used for anonymous memory, which is data that are not already stored.
+- In the Linux paging system swap area, the area is split into 4KB page slots, each having a swap map that contains a counter of how many processes are using that page.
+
+## 11.7 Storage Attachment
+
+Secondary storage access comes in three different methods:
+
+1. Host-attached storage
+    - Local storage using a storage protocol (SAS, SATA, FC).
+    - Might use a JBOD attached to a host.
+    - Multi-affiliate hosts, or single-affiliate hosts.
+    - Storage-Area Networks are in this category
+2. Network-attached storage
+    - NAS
+        - A computer that is attached a large amount of storage connects to the network and allow other computers to access the contents.
+    - Local network access is faster
+    - Accessing a NAS will run a remote-procedure-call interface.
+        - NFS on UNIX
+        - CIFS for Windows
+        - Running on TCP or UDP.
+    - Easy way for computers on a network to access a pool of storage.
+    - iSCSI is a new protocol for network storage access. Sends data in logical blocks instead of whole files. The hosts will treat the network drives like it is attached using SCSI commands.
+3. Cloud storage
+    - Data now stored in a remote data centre.
+    - Usually API based access.
+    - Not much else to say. Things are done because WAN is less reliable than LAN.
+4. SAN and Storage Arrays
+    - To not consume network bandwidth, the idea of Storage-area network was made.
+    - SAN is a private network that uses storage protocol instead of network protocols.
+    - SAN connects servers and storage units.
+    - Does multiple hosts to multiple storage arrays on a single SAN. Pooling.
+    - They say the storage arrays can be JBODs, but that is just not how they do it in industry. A JBOD in the SAS context is just a lot of drives connected to an expander, but that doesn't mean that there is a controller attached. The PHY has to eventually lead to a controller for those drives to do anything other than just sit around.
+    - SANs are also usually connected over short distances, and has no routing.
+    - SAN are more expensive than NAS, and the other downsides means that SAN cannot have more connected clients than a NAS.
+    - Storage arrays are devices that maintain drives, and assists in servicing those drives to the clients.
+        - Storage arrays usually have a controller and some memory, effectively making it a specialized computer.
+        - Some storage arrays will have software that assists in storage management.
+        - Might have features like: encryption, compression, RAID, replication, deduplication, and others.
