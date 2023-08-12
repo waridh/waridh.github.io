@@ -377,8 +377,43 @@ RAID exists because of several reasons:
 - **Performance** - In many instances, the bandwidth of a single HDD using SATA will be a bottleneck in some process or system. Some RAID level gets past these limitations.
 - **Pooling** - The simple case. You want to pool the storage from many drives into a single location for easier access, and better utilization.
 
+All RAID levels requires that all the drives in the array are the same size. If they are not the same size, most implementation will limit the amount of storage available on larger drives to match the smallest size.
+
 | Type | Description |
 | --- | --- |
 | RAID 0 | Striped raid array. Data is written and read across all the drives that are a part of the array at once. This gives increased speed, but this RAID level does not provide any protection against drive failures. The stripe IO usually works by sending a block to the different drives from a file. |
 | RAID 1 | Mirrored array. For all drives, there is a mirror present. If one drive fails, there is a mirror ready to be used. You can then place a new drive in, and it would become mirrored. Very strong fault tolerance, but wastes storage. Writes take twice as long, and might need a cache to confirm what the base is in case there are some failures during writing. Reads are faster than no RAID since there is a mirror drive with the same data available. |
-RAID 4 | Parity
+| RAID 4 | Files are written in stripes of blocks to (N - 1) drives in the RAID. The last drive stores the parity of all the other drives that were written. Reads are faster because the data is striped. Writes are slower because the parity has to be calculated. Allows for one drive to fail. Can recover by replacing the failed drive. |
+| RAID 5 | Files are written in stripes, but the parity is moving every single sets of writes. Otherwise, same benefits and disadvantages as RAID 4. |
+| RAID 6 | P + Q redundancy. There is parity and another ECC written for every striped block writes. Now two drives can fail, and you are still able to recover them. |
+| Multidimensional RAID 6 | Used on larger arrays. Logically organize the drives into rows and columns, and having a RAID 6 on both axis. |
+| RAID 01 | Stripped then mirrored. This RAID level makes a mirror of a striped set of drives. On a drive failure, the mirror still exists. |
+| RAID 10 | Mirrored, then striped. This RAID level stripes the mirrors. When a drive fails, there is still a mirror of that drive. This actually has some tolerance for multiple drive failures. |
+
+### 11.8.6 Problems with RAID
+
+- It doesn't protect from operating system and file system failures.
+- RAID cannot handle incomplete writes that are not properly recovered.
+- Most hardware and software bugs that isn't directly the physical drive errors.
+
+#### ZFS
+
+- Tolerance against the failures that RAID cannot handle by having internal checksum of all the blocks.
+- The checksums are stored in a separate location, and points to the block that it is doing checksum on.
+- Even the inode (metadata block) are checksummed.
+- When there is a bad block, the checksum will not be consistent. Operating system will be notified.
+    - The error could be corrected if the data is mirrored.
+
+### 11.8.7 Object Storage
+
+The system that doesn't use a file-system. Instead, the objects are just placed into the storage. The objects can be accessed by a program. This system is used for program-centric computers, but not user-centric ones.
+
+1. Objects are created, and receives an object ID.
+2. Access the object using the object ID.
+3. Delete the object using the object ID.
+
+Hadoop File System and Ceph are some storage solutions that use object storage.
+
+#### Hadoop File System (HDFS)
+
+This file system has good horizontal scalability due to having a storage pool shared by multiple general purpose computers. The real advantage here is that Hadoop can store N copies of the object on N computers. This allows redundancy, but more importantly, those N computers can read the N copies of the object very fast. This means if changes or computation are happening on those objects, then it would occur on those N computers, as they have fast access, and could even parallelize the task. The result is then shared across the network as a part of the storage pool.
