@@ -84,10 +84,10 @@ Those code did not take up that much space, but there are some abstraction that 
 
 ```
 let map_aux f acc = function
-| [] -> acc
+| [] -> List.rev acc
 | h :: t -> map_aux f (f h :: acc) t
 
-let map f lst = List.rev (map_aux f [] lst)
+let map f lst = map_aux f [] lst
 ```
 
 Tail recursive implementation for the map function will reverse the list, so
@@ -97,3 +97,17 @@ time complexity now is that it is a constant slower than the non-tail recursive 
 ## 6.3 Filter
 
 We were able to get through maps fast, and I expect the same for filters.
+
+Motivation is somewhat simple. We want to remove certain elements from a given data structure. How can we do this? I'll just give the example of how you could implement a filter now, since it is relatively simple to understand.
+
+```
+let filter_aux p acc = function
+| [] -> List.rev acc
+| h :: t -> if p h then filter p (h :: acc) t else filter p acc t
+```
+
+Nothing too complicated here. Just making sure to skip the element of the list if it doesn't satisfy the predicate.
+
+## 6.4 Fold
+
+Things start to get complicated here, since folds have ordering intricacies.
