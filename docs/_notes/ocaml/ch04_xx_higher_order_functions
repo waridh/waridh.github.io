@@ -1,0 +1,55 @@
+---
+title: "CS3110: Chapter 4 - Higher Order Programming"
+topic: cs3110
+header:
+  teaser: /assets/images/ocaml_teaser.png
+---
+
+Higher order functions are functions that can take another function as either
+a parameter, or return it as an output. This added layer of abstraction can
+allow programmers to simplify their code and increase clarity.
+
+## 4.1 Higher-Order function
+
+Here is a basic example of applying a function twice.
+
+```
+let double x = x * 2
+let square x = x * x
+
+let quad x = double (double x)
+let fourth x = square (square x)
+```
+
+Notice that the second set of functions are created with a repeat of the same
+function twice. This structural pattern can be abstracted out if the language
+supports higher-order functions. What we can do in OCaml is the following:
+
+```
+let double x = x * 2
+let square x = x * x
+let twice f x = f (f x)
+
+(* Implementing quad and fouth using twice *)
+let quad' x = twice double x
+let fourth x = twice square x
+```
+
+Currently, there are more lines of code in this implementation, but the
+abstraction makes it trivial to understand. This is called the **abstraction principle**, and there is a bigger textbook that describes why it is nice. I will just take that for granted and move on.
+
+Pipelines in OCaml are also a higher order function. Here is some definition examples:
+
+```
+let pipeline x f = f x
+let (|>) = pipeline
+let x = 5 |> double     (* 10 *)
+```
+
+There are some more basic examples, but the point here is that higher-order programming allows us to transform functions in ways that allows for good modularity, composition, and so clarity.
+
+### Definition of Higher Order
+
+Formal logic definition:
+
+*First-order quantification* usually refers to universal or existential ($$\forall$$, $$\exists$$)
