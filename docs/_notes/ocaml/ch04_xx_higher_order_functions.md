@@ -111,3 +111,95 @@ Nothing too complicated here. Just making sure to skip the element of the list i
 ## 6.4 Fold
 
 Things start to get complicated here, since folds have ordering intricacies.
+
+A fold is a function that will combine all elements in a data structure using an input function to define how the combination should happen.
+
+Here is the example of creating functions that do not use fold:
+
+```
+let rec sum = function
+| [] -> 0
+| h :: t -> h + (sum t)
+
+let rec concat = function
+| [] -> ""
+| h :: t -> h ^ concat t
+```
+
+Moving on to how this can be implemented in higher order, simplifying the implementation:
+
+```
+let rec combine f init lst = match lst with
+| [] -> init
+| h :: t -> f h (combine f init lst)
+
+let sum = combine ( + ) 0
+let concat = combine ( ^ ) ""
+```
+
+So there are actually two layers of abstraction when it comes to folds. You need to separate out the base case, as to comply with the type of the function. After that, the function used to combine the values must be specified.
+
+Now here is where ordering matter. What we made was called a **fold right**, and that is because the operations are being done from right to left. Here is an example of how to operation is ordered when you use a fold right:
+
+$$
+\left(a + \left(b + \left(c + init\right)\right)\right)
+$$
+
+The problem with this solution is that it is not tail recursive. We can make a change in the code to fix that by changing the way that the accumulator is handled. The following example shows how we can do that:
+
+```
+let rec combine_tr f acc = function
+| [] -> acc
+| h :: t -> combine_tr f (f acc h) t
+```
+
+This implementation is now recursive, but the ordering of the application has changed. The operation now runs as follows:
+
+$$
+\left(\left(\left(init+a\right)+b\right)+ c\right)
+$$
+
+This makes the result different between fold left and fold right while using the same inputs. The implementation of `combine_tr` is actually a library function called **fold left**, and it does its order of operation from left to right. Best advantage in using fold left is that it is tail recursive. Also, you can reverse lists with it, so that is pretty cool.
+
+### Examples
+
+Right, here are some examples of how fold can be used:
+
+```
+let length lst =
+  List.fold_left (fun acc _ -> acc + 1) 0 lst
+let rev lst =
+  List.fold_left (fun acc h -> h :: acc ) [] lst
+let map f lst =
+  List.fold_right (fun h acc -> f h :: acc) lst []
+let filter p lst =
+  List.fold_right (fun h acc -> if p h then h :: acc else acc) lst []
+```
+
+So what fold guarantees is that the recursive travel is not done correctly. What might be a bit more difficult with fold is that it will not always be immediately clear to a programmer what is happening in the code.
+
+### 6.4.8 Fold vs Recursive vs Library
+
+Here is the jot note:
+
+- For all implementation, there is a trade-off. For some functions, the recursive and library implementation might return without having to go through the entire data structure, but if you are using fold left, you know that it is going to run in linear time with a tail recursion.
+
+## 6.5 Beyond Lists
+
+Remember this?
+
+```
+type 'a tree =
+  | Leaf
+  | Node of 'a * 'a tree * 'a tree
+```
+
+Here are some example of doing filters, maps, and folds on this structure (not in that order).
+
+### Map
+
+```
+let tree_map f = function
+  | Leaf -> Leaf
+  | Node (a, b, c) -> Node (f a, tree_map f b, tree_map f c)
+```
