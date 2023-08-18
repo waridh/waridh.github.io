@@ -66,7 +66,7 @@ Now we are going to cover the following popular higher-order functions:
 - Filters - Eliminator of elements
 - Folds - Elements combinator
 
-## 6.2 Map
+## 4.2 Map
 
 This function will transform all the elements in the input data-structure. The following two examples will have two functions, one implemented separately, and the other using map.
 
@@ -94,7 +94,7 @@ Tail recursive implementation for the map function will reverse the list, so
 another function has to be used to reverse the list again. The trade-off in
 time complexity now is that it is a constant slower than the non-tail recursive solution, not that I am showing that one.
 
-## 6.3 Filter
+## 4.3 Filter
 
 We were able to get through maps fast, and I expect the same for filters.
 
@@ -108,7 +108,7 @@ let filter_aux p acc = function
 
 Nothing too complicated here. Just making sure to skip the element of the list if it doesn't satisfy the predicate.
 
-## 6.4 Fold
+## 4.4 Fold
 
 Things start to get complicated here, since folds have ordering intricacies.
 
@@ -178,13 +178,13 @@ let filter p lst =
 
 So what fold guarantees is that the recursive travel is not done correctly. What might be a bit more difficult with fold is that it will not always be immediately clear to a programmer what is happening in the code.
 
-### 6.4.8 Fold vs Recursive vs Library
+### 4.4.8 Fold vs Recursive vs Library
 
 Here is the jot note:
 
 - For all implementation, there is a trade-off. For some functions, the recursive and library implementation might return without having to go through the entire data structure, but if you are using fold left, you know that it is going to run in linear time with a tail recursion.
 
-## 6.5 Beyond Lists
+## 4.5 Beyond Lists
 
 Remember this?
 
@@ -241,7 +241,7 @@ let rec tree_filter f = function
 | Node (a, b, c) if f a then Node (a, tree_filter f b, tree_filter f c) else Leaf
 ```
 
-## 6.6 Pipelining
+## 4.6 Pipelining
 
 The example that we are trying to solve to illustrate how you can use pipelining is to calculate the sum of squares of the numbers from 0 to n. Imagine that we also don't have the mathematical optimization of:
 
@@ -276,7 +276,7 @@ let sum_sq n =
 
 The one issue that we have here is that these are not necessarily tail recursive, and it is a constant time more complex than the imperative solution. Trade-offs are what we deal with in programming.
 
-## 6.7 Currying
+## 4.7 Currying
 
 You curry a function when you do not take the input in a way where partial application is possible. So it's `let add x y = x + y` vs `let add' (x, y) = x + y`. The first implementation allows you to partially apply your function while the second implementation doesn't.
 
