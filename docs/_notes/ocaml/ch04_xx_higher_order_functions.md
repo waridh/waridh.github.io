@@ -203,3 +203,83 @@ let tree_map f = function
   | Leaf -> Leaf
   | Node (a, b, c) -> Node (f a, tree_map f b, tree_map f c)
 ```
+
+This is map implemented to work on a tree type.
+
+### Fold
+
+```
+let tree_fold f acc = function
+| Leaf -> acc
+| Node (a, b, c) -> f a (tree_fold f acc b) (tree_fold f acc c)
+```
+
+Where `f` is a function that takes three parameters.
+
+Here are some example functions that you can build using tree_fold:
+
+```
+let tree_size t = tree_fold (fun _ l r -> 1 + l + r) 0 t
+let depth t = tree_fold (fun _ l r -> 1 + max l r) 0 t
+let preorder t = tree_fold (fun x l r -> {x} @ l @ r) [] t
+```
+
+We needed to use fold right because we cannot make a binary tree tail recursive.
+
+Here are some other notes:
+
+- The way we came up with this fold operating on the binary tree will work for all other variant types on OCaml.
+- The technique of construction for this function is called *catamorphism*, also known as *generalized fold operations*. Learn **category theory** to know more about it.
+
+### Filters
+
+Implementing a filter on a tree takes more thinking because depending on the case, you might want to reconstruct the children of the tree, or you might choose to ignore them. It's really dependent on you use case. Here is a quick example with the policy of the filter being to remove all the children as well.
+
+```
+let rec tree_filter f = function
+| Leaf -> Leaf
+| Node (a, b, c) if f a then Node (a, tree_filter f b, tree_filter f c) else Leaf
+```
+
+## 6.6 Pipelining
+
+The example that we are trying to solve to illustrate how you can use pipelining is to calculate the sum of squares of the numbers from 0 to n. Imagine that we also don't have the mathematical optimization of:
+
+$$
+\frac{n\left(n+1\right)\left(2n+1\right)}{6}
+$$
+
+How would you program a more naive solution effectively?
+
+In an imperative language, you would do something like the following:
+
+```Python
+def sum_sq(n):
+  sum = 0
+  for i in range(1, n + 1):
+    sum += i * i
+  return sum
+```
+
+But if you use pipelining, you can write much cleaner code that kinda self documents.
+
+```
+let rec (--) i j = if i > j then [] else i :: (i + 1) -- j
+let square x = x * x
+let sum = List.fold_left ( + ) 0
+
+let sum_sq n =
+0 -- n                  (*[0 ; 1; ...; n]*)
+|> List.map square      (*[0; 1; 4; ...; n^2]*)
+|> sum                  (* 0 + 1 + 4 + ... + n^2 *)
+```
+
+The one issue that we have here is that these are not necessarily tail recursive, and it is a constant time more complex than the imperative solution. Trade-offs are what we deal with in programming.
+
+## 6.7 Currying
+
+You curry a function when you do not take the input in a way where partial application is possible. So it's `let add x y = x + y` vs `let add' (x, y) = x + y`. The first implementation allows you to partially apply your function while the second implementation doesn't.
+
+## Summary
+
+Did a lot of introduction to higher-order programming, the main concept of which is taking functions as an input or an output. This concept can be used to construct functions that are more clear, and perhaps require less work.
