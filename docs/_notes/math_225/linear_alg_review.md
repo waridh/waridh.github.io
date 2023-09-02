@@ -26,7 +26,7 @@ $$
 \end{bmatrix}
 $$
 
-Subtract $R_3$ with $R_1$ yields the following:
+Subtract $$R_3$$ with $$R_1$$ yields the following:
 
 $$
 \begin{bmatrix}
@@ -77,3 +77,7 @@ three linearly independent vectors.
 ### Second method
 
 To check if the set of vectors are linearly independent, we can also find the determinant of the matrix, and if it is any value that is not zero, then the set is linearly independent, however, if the determinant of the matrix is zero, then the set is linearly dependent.
+
+## Basis
+
+### Representing Basis in $$\mathbb{R}^n$$.
