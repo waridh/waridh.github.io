@@ -97,7 +97,7 @@ $$
 Ax = \lambda x
 $$
 
-To find the eigenvector, the eigenvalue must be found first. The property which will help us find the eigenvalue is that the determinant of the characteristic matrix is 0. The characteristic matrix of a transformation matrix has the following equation.
+To find the eigenvector, the eigenvalue must be found first. The property which will help us find the eigenvalue is that the determinant of the characteristic matrix is 0. A zero vector is not an eigenvector, even though it satisfies all the properties required by the eigenvector. The characteristic matrix of a transformation matrix has the following equation.
 
 $$
 A - \lambda I
@@ -180,6 +180,8 @@ $$
 = -\lambda \left(\lambda^2 -15\lambda-18\right) = 0
 $$
 
+What we have here is the characteristic polynomial, and it is used to find the eigenvalues. The eigenvalues can be obtained by finding the root of the characteristic polynomial.
+
 Solving for the quadratic
 
 $$
@@ -190,4 +192,131 @@ $$
 \therefore \lambda = 0 ; \frac{3\sqrt{33} + 15}{2} ; \frac{-3\sqrt{33}+15}{2}
 $$
 
+After finding the eigenvalue of a matrix, the eigenvector can be derived. Since we are looking for a vector that when multiplied with the characteristic matrix, would result in a value of 0. Unlike eigenvectors, eigenvalues are allowed to have a value of zero.
+
+$$
+\left(A-\lambda I\right)v = 0
+$$
+
+Where v is the eigenvector.
+
+Let's continue the example that was started earlier in the section, and use the eigenvalue of 0 fir simplicity sake.
+
+$$
+Eigen = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
+We want to find the eigenvector for this characteristic matrix. This can be done with the following.
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix} \begin{bmatrix}
+x \\
+y \\
+z \\
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+$$
+
+$$
+\begin{bmatrix}
+x + 2y + 3z \\
+4x + 5y + 6z \\
+7x + 8y + 9z
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+$$
+
+We can solve this by doing row reduction
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 & 0 \\
+4 & 5 & 6 & 0 \\
+7 & 8 & 9 & 0
+\end{bmatrix}
+$$
+
+$$
+R_2 = -4R_1 + R_2 \rightarrow \begin{bmatrix}
+1 & 2 & 3 & 0 \\
+0 & -3 & -6 & 0 \\
+7 & 8 & 9 & 0
+\end{bmatrix}
+$$
+
+$$
+R_3 = -7R_1 + R_3 \rightarrow \begin{bmatrix}
+1 & 2 & 3 & 0 \\
+0 & -3 & -6 & 0 \\
+0 & -6 & -12 & 0
+\end{bmatrix}
+$$
+
+$$
+R_3 = -2R_2 + R_3 \rightarrow \begin{bmatrix}
+1 & 2 & 3 & 0 \\
+0 & -3 & -6 & 0 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+$$
+R_2 = \frac{R_2}{-3} \rightarrow \begin{bmatrix}
+1 & 2 & 3 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+$$
+R_1 = -2 R_2 + R_1 \rightarrow -\begin{bmatrix}
+1 & 0 & -1 & 0 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+$$
+x - z = 0 \\
+y + 2z = 0 \\
+$$
+
+$$
+x = z \\
+y = -2z \therefore z = -\frac{y}{2}
+$$
+
+If `x == 1` then:
+
+$$
+x = 1; z =1; y = -2 \\
+\therefore v = \begin{bmatrix}
+1 \\
+-2 \\
+1
+\end{bmatrix}
+$$
+
 ## Characteristic Polynomials (Eigenpolynomial)
+
+When you have an $$n \times n$$ matrix called $$A$$, the characteristic polynomial of $$A$$ is denoted as $$f\left(\lambda\right)$$. The formula for the characteristic polynomial is given by $$f\left(\lambda\right) = det\left(A-\lambda I_n\right)$$ which when using the terms that we built up, would be the determinant of the characteristic function.
+
+You find the characteristic polynomial to find the eigenvalue. This is very similar to the work that we have done earlier to find the eigenvalues. In fact, the characteristic polynomial is an intermidiate step before getting the resulting eigen values.
+
+The eigenvalues can be extracted from the characteristic polynomial by finding the roots of the polynomial.
+
+- If the polynomial is 0, then $$A$$ is an identity matrix $$I$$.
