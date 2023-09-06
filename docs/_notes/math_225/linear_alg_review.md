@@ -249,6 +249,10 @@ three linearly independent vectors.
 
 To check if the set of vectors are linearly independent, we can also find the determinant of the matrix, and if it is any value that is not zero, then the set is linearly independent, however, if the determinant of the matrix is zero, then the set is linearly dependent.
 
+## Nullity of a Matrix
+
+Just the complement of the rank of a matrix. To find this, you simply have to subtract the number of columns with the rank of the matrix.
+
 ## Basis
 
 ### Representing Basis in $$\mathbb{R}^n$$.
@@ -461,6 +465,8 @@ R_1 = -2 R_2 + R_1 \rightarrow -\begin{bmatrix}
 \end{bmatrix}
 $$
 
+Since the matrix only has two pivots, and there are three variables, there exists a free variable.
+
 $$
 x - z = 0 \\
 y + 2z = 0 \\
@@ -468,19 +474,24 @@ $$
 
 $$
 x = z \\
-y = -2z \therefore z = -\frac{y}{2}
+y = -2z
 $$
 
-If `x == 1` then:
+If $$z = s$$ then:
 
 $$
-x = 1; z =1; y = -2 \\
-\therefore v = \begin{bmatrix}
-1 \\
--2 \\
-1
-\end{bmatrix}
+\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix} = \begin{pmatrix}
+s \\
+-2s \\
+s
+\end{pmatrix}
 $$
+
+That final answer is one of the three eigenvector as a function of the free variable, which also acts as a scalar.
 
 ## Characteristic Polynomials (Eigenpolynomial)
 
@@ -491,4 +502,5 @@ You find the characteristic polynomial to find the eigenvalue. This is very simi
 The eigenvalues can be extracted from the characteristic polynomial by finding the roots of the polynomial.
 
 - If the polynomial is 0, then $$A$$ is an identity matrix $$I$$.
-- You can find out if the matrix is diagonalizeble if there are the same amount of eigenvalues as $$n$$. It would be good to prove this, but I am not a mathematician, and cannot make proofs.
+- You can find out if the matrix is diagonalizeble if the eigenvectors make up a basis.
+- If a matrix has an eigenvalue of 0, then that matrix is not invertible.
