@@ -61,3 +61,33 @@ The circuits that are analyzed and covered in ECE 302 can be considered linear w
     - If the value of the current found is positive, then the assumed direction was correct, if it is negative, then the assumed direction is incorrect and the current is moving in the opposite sense.
   - Current can either go into, or go out of a particular terminal of a device. In general, devices may have n terminals, where $$n \ge 2$$.
     - We can let current through a two terminal device.
+- Power Dissipation
+  - Power dissipation of a two terminal device can be defined as $$p\left(t\right)=v\left(t\right)i\left(t\right)$$ using the convention for voltage and current as defined above.
+  - If the power is negative, it means that the device is absorbing power from the system.
+  - If the power is positive then the element is supplying power to the system.
+  - Power dissipation of an n-terminal device is given by the following generalized equation: $$p\left(t\right)=\Sigma v_{node}\left(t\right)i_{in}\left(t\right)$$
+  - Even in linear circuits, power should be treated as a non-linear function of voltage and/or current.
+- **Total instantaneous, DC, and AC signals**
+  - There is a convention for communicating if the value being referenced is T.I., DC, or AC.
+    - T.I. - The measurable signal. $$v_C\left(t\right)$$
+    - DC - Constant with respect to time, thus not a function of time. $$V_C$$.
+    - AC - Time varying component of the signal. Denoted with the following: $$v_c\left(t\right)$$
+    - Finally $$T.I. = DC + AC$$
+    - $$v_C\left(t\right) = V_C + v_c\left(t\right)$$
+
+## Current-voltage characteristics
+
+- Inductors
+  - $$ v_L\left(t\right) = L\frac{d}{dt}i_L\left(t\right)$$
+  - $$ i_L\left(t\right) = \frac{1}{L}\int_{0^+}^tv_L\left(t\right)dt+i_L\left(0\right)$$
+  - The current cannot jump
+  - Store energy in magnetic fields
+- Resistor
+  - $$v_R\left(t\right)=Ri_R\left(t\right)$$
+- Capacitor
+  - $$ i_C\left(t\right) = C\frac{d}{dt}v_C\left(t\right)$$
+  - $$ v_C\left(t\right) = \frac{1}{C}\int_{0^+}^ti_C\left(t\right)dt$$
+  - The voltage cannot jump
+  - Store energy in electric fields
+- The main model we use for circuit analysis uses the lumped component model with ideal components.
+  - What this entails is that the inductors do not have parasitic capacitance, and the wires and terminals have no resistance.
