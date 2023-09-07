@@ -175,6 +175,119 @@ $$
 
 Where $$A$$ is a square matrix, and $$I$$ is an identity matrix with a matching dimension.
 
+## Subspaces
+
+A subspace of $$\mathbb{R}^n$$ is a collection of vectors $$S \in \mathbb{R}^n$$ such that:
+
+1. It has a zero vector: $$\begin{bmatrix}0 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}$$
+2. It is closed under scalar multiplication meaning that the output of the scalar multiplication where $$c \in \mathbb{R}$$ is also a part of the subspace.
+3. If $$\vec{w_1}, \vec{w_2} \in S$$, then $$\vec{w_1} + \vec{w_2} \in S$$.
+
+### Null-space
+
+For every $$n\times n$$ matrix $$A$$, the null-space $$null\left(A\right) =\left\{\text{all vectors }v\text{ s.t. }Av=0\right\}$$.
+
+$$
+\text{e.g. } A = \begin{pmatrix}4 & 2 \\
+0 & 0
+\end{pmatrix} 
+$$
+$$
+null\left(A\right) = \left\{v | Av=\begin{pmatrix}0\\0\end{pmatrix}\right\} $$
+$$
+\downarrow \text{can be found with RREF} $$
+$$
+\begin{pmatrix}4 & 2 \\ 0 & 0\end{pmatrix}\begin{pmatrix}x \\ y\end{pmatrix}=\begin{pmatrix}0 \\ 0\end{pmatrix} $$
+$$
+\downarrow \text{Convert to RREF} $$
+$$
+\begin{pmatrix}1 & \frac{1}{2} \\ 0 & 0\end{pmatrix}\begin{pmatrix}x \\ y\end{pmatrix}=\begin{pmatrix}0 \\ 0\end{pmatrix} $$
+$$
+x + \frac{y}{2} = 0; x = -\frac{y}{2} $$
+$$
+y = u; x = -\frac{u}{2} $$
+$$
+\begin{pmatrix}x \\ y\end{pmatrix} = \begin{pmatrix}-\frac{u}{2} \\ u\end{pmatrix} = u\begin{pmatrix}-\frac{1}{2} \\ 1\end{pmatrix} $$
+$$
+null\left(A\right) = \left\{\forall v | u \begin{pmatrix}-\frac{1}{2} \\ 1\end{pmatrix}, u\in\mathbb{R}\right\} $$
+
+You will need to check if this is a subspace
+
+1. $$ \text{Zero vector: } 0 = 0\begin{pmatrix}-\frac{1}{2} \\ 1\end{pmatrix}$$
+2. $$\text{Is the scalar under closure?: for all vectors } v \in null\left(A\right) \\ Av=0 \therefore A(cv)=cAv=0$$
+3. $$\vec{v}=\begin{pmatrix}1 \\ -2\end{pmatrix},\vec{w}=\begin{pmatrix}-2 \\ 4\end{pmatrix}\in null\left(A\right) \\ \vec{v}+\vec{w} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \in null\left(A\right)$$
+
+And thus from this check, we know that $$null\left(A\right)$$ is a subspace.
+
+### Row spaces
+
+$$row\left(A\right) = \begin{cases}\text{Set of vectors whih are linear combinations of rows of A}\end{cases}$$
+
+#### Steps
+
+1. Put into $$RREF\left(A\right)$$
+2. Basis of $$row\left(A\right)$$ is all rows of RREF with non-zero leading entries.
+
+### Column space
+
+$$col\left(A\right) = \begin{cases}\text{Set of vectors which are a linear combination of the columns of A}\end{cases}$$
+
+#### Steps
+
+1. Find the $$RREF\left(A\right)$$.
+2. Take the columns of the original matrix that have a leading entry on the RREF.
+
+## Determinant
+
+Determinant: $$ det\left(A\right)$$ is a system that acts on in input of an $$n\times n$$ matrix that creates a number output that follows that following rules:
+
+1. $$det\left(I_n\right)=1$$
+2. when A swaps rows $$ det\left(A\right) = - det\left(A'\right) $$
+3. Swapping two columns $$det\left(A\right) = -det\left(A'\right)$$
+4. Scaling one row by factor $$c$$: $$cdet\left(A\right)= det\left(A'\right)\therefore det\left(cA\right) = c^n det\left(A\right)$$
+5. When you add one row to another: $$det\left(A\right) = det\left(A'\right)$$
+6. If A has at least one row of zeros, $$det\left(A\right)=0$$
+
+### Algorithm
+
+Finding the determinant of a square matrix is a recursive process. The set-up is the following:
+
+#### Base case
+
+The base case of this process is the determinant of a $$2\times 2$$ matrix:
+
+$$
+\begin{pmatrix}a & b \\ c & d\end{pmatrix} = ad-bc
+$$
+
+#### Other cases
+
+If bigger, the matrix will get reduced by doing the following demonstrated on a $$3\times 3$$ matrix.
+
+1. The index of the matrix is mapped out with positives and negatives:
+$$
+\begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i 
+\end{pmatrix} \rightarrow
+\begin{pmatrix}
++ & - & + \\
+- & + & - \\
++ & - & + 
+\end{pmatrix}
+$$
+
+2. Pick a column or row with the largest amount of zeros, and then run this operation on all of them. In this example, we will be using $$\begin{pmatrix}a & b & c\end{pmatrix}$$: $$\begin{pmatrix} a & \cdots & \cdots \\
+\vdots & e & f \\
+\vdots & h & i \end{pmatrix} \rightarrow a\begin{vmatrix}e & f \\ h & i\end{vmatrix}$$
+
+From here the determinant of the $$2 \times 2$$ matrix can be found, as it is the base case.
+
 ## Linear Independence
 
 When two vectors are not scalar vectors, they are said to be independent. This applies to a set of more than two vectors as well. To check if a set of vectors are linearly independent, one can reduce the matrix of that set down to the identity matrix. If that is not possible, then the set of vectors are not linearly independent.
@@ -252,7 +365,9 @@ To check if the set of vectors are linearly independent, we can also find the de
 
 ## Nullity of a Matrix
 
-Just the complement of the rank of a matrix. To find this, you simply have to subtract the number of columns with the rank of the matrix.
+Just the complement of the rank of a matrix. To find this, you simply have to subtract the number of columns with the rank of the matrix, which is the same as saying subtracting the number of variables by the rank of the matrix.
+
+The nullity of a matrix represents the number of free parameters in the system.
 
 ## Basis
 
@@ -260,6 +375,11 @@ Just the complement of the rank of a matrix. To find this, you simply have to su
 
 - Since a basis in an $$\mathbb{R}^n$$ vector space will be able to represent any vector in that vector space through linear combination, it is necessary that there are n vectors in that basis set of vectors.
 - Linear transforms that are done on a basis will leave the resulting set also be a basis.
+
+### Finding the basis of a subspace
+
+- Subspaces are a little different as it may not be necessary to be able to represent every vector in $$\mathbb{R}^n$$.
+- To find a basis in a subspace, you just need to use the definition of the subspace to define an augmented matrix. Once this is done, just take the RREF and write all the solution in terms of the free variable.
 
 ## Eigenvalues and Eigenvectors
 
