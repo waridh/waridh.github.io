@@ -21,7 +21,8 @@ $$
 \vdots & \vdots &  & \vdots \\
 C_1 & C_2 & \cdots & C_m\\
 \vdots & \vdots &  & \vdots
-\end{bmatrix} = \begin{bmatrix}
+\end{bmatrix} \\
+= \begin{bmatrix}
 R_1\cdot C_1 & R_1\cdot C_2 & \cdots & R_1\cdot C_m \\
 R_2 \cdot C_1 & R_2 \cdot C_2 & \cdots & R_2\cdot C_m \\
 \vdots & \vdots & \ddots & \vdots \\
@@ -360,7 +361,8 @@ What we have here is the characteristic polynomial, and it is used to find the e
 Solving for the quadratic
 
 $$
-\frac{15\pm\sqrt{15^2-4\left(1\right)\left(-18\right)}}{2\left(1\right)} = \frac{15\pm\sqrt{297}}{2} = \frac{3\sqrt{33} + 15}{2} ; \frac{-3\sqrt{33}+15}{2}
+\frac{15\pm\sqrt{15^2-4\left(1\right)\left(-18\right)}}{2\left(1\right)} = \frac{15\pm\sqrt{297}}{2} \\
+= \frac{3\sqrt{33} + 15}{2} ; \frac{-3\sqrt{33}+15}{2}
 $$
 
 $$
