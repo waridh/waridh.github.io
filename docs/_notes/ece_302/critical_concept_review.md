@@ -1,5 +1,5 @@
 ---
-title: "Prerequisite Reviews"
+title: "Transistor Physics Prerequisite Reviews"
 topic: ece302
 ---
 
