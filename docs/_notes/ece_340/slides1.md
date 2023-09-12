@@ -26,11 +26,8 @@ Where $$K$$ is the period and the number of cycles is the denominator of the red
 
 ## Energy signal
 
-- The instantaneous energy can be obtained with $$ \left|x\left[k\right]\right|^2 $$
-- The total signal energy can be obtained with
-$$
-E_x=\sum_{k=-\infty}^{\infty}\left|x\left[k\right]\right|^2
-$$
+- The instantaneous energy can be obtained with $$ \lvert x\left[k\right]\rvert ^2 $$.
+- The total signal energy can be obtained with $$ E_x=\sum_{k=-\infty}^{\infty}\lvert x\left[k\right]\rvert^2 $$.
   - The signal is not an energy signal if the total energy of the signal is $$\infty$$, which usually means that the signal is either periodic or on a cycle.
 
 ## Power signal
@@ -84,8 +81,11 @@ There are four properties of even and odd signals that can be abused. These are 
 \end{cases}$$
 2. Unit step function. Works similary to continuous time version, but it's now many DT 1s instead of a continuous block. It can be described with the following piecewise function. $$u\left[k\right]=\begin{cases}1 & k \ge 0 \\
 0 & k < 0\end{cases}$$
-3. Rectangular function. $$ rect\left(\frac{k}{2N+1}\right)=\begin{cases}1 & \left|k\right|\le N \\
-0 &\left|k\right|\gt N \end{cases} $$
+3. Rectangular function.
+$$
+rect\left(\frac{k}{2N+1}\right)=\begin{cases}1 & \lvert k\rvert\le N \\
+0 &\lvert k\rvert\gt N \end{cases} 
+$$
 4. Sinc. In this scope of this class, we are going to be using the following definition. $$ sinc\left(\Omega_0k\right) = \frac{\sin\left(\pi\Omega_o k\right)}{\pi\Omega_o k} $$
 
 ## Complex Exponential function
