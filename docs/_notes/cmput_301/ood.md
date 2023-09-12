@@ -17,11 +17,13 @@ Let's go a little into each of them.
 
 ### Abstraction
 
-Simplifying to its essential description of a real-world entity or concept.
+Simplifying to its essential description of a real-world entity or concept based on the context of the problem.
 
-- Helps with dealing with complexity.
+- Helps with dealing with complexity. (Simplifies the design so that only the most relevant detail for the context is kept, while the irrelevant is ignored)
 - Selective ignorance
 - Modeling the problem space.
+
+The abstraction of an object may change depending on the context, and it is good to keep track of which is the best abstraction for a certain problem.
 
 ### Encapsulation
 
