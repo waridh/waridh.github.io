@@ -1,0 +1,6 @@
+@startuml
+class Plane {}
+class Airline {}
+
+Plane "0..*" --o "0..*" Airline
+@enduml

@@ -46,6 +46,10 @@ We are trying to hide the implementation detail, since those can be changed, and
 
 The object being encapsulated also should not contain data that is not relevant to the object itself.
 
+#### Java
+
+The way that encapsulation can be represented in Java is via classes and the private and public members (protected as well).
+
 ### Decomposition
 
 Divide the entire thing input parts/make the system out of parts. This is still separate from generalization, but together, they create an important concept.
@@ -56,6 +60,20 @@ Divide the entire thing input parts/make the system out of parts. This is still 
   - A part can be shared between multiple wholes.
 - Life-time of parts.
   - Is the part's lifetime closely tied to the lifetime of the whole, or is it more independent?
+
+#### Java and UML
+
+In UML, which can then model Java, decomposition is split into three types,
+
+- Association
+  - The two objects has some relationship. They are very loosely connected, and are mostly independent.
+  - In Java, you would see objects with these type of relationship to just be passed as a parameter into a method in the other object.
+- Aggregation
+  - This is a has-a relationship. One object acts as a container for the other, but it is still a weak relationship. This means that both objects can exist independently of one another.
+  - In Java, this is just an array member holding objects.
+- Composition
+  - Another has-a relationship, but this time, it is a strong relationship. The container cannot exist without the component, and likely vice versa.
+  - In Java, you would denote this by instantiating the component object in the constructor of the whole object.
 
 ### Generalization
 

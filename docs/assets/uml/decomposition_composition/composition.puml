@@ -1,0 +1,6 @@
+@startuml
+class Human {}
+class Organ {}
+
+Human *-- "1..*" Organ
+@enduml

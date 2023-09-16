@@ -38,6 +38,31 @@ Let's talk about area of the class diagram.
 - The second section is the attributes.
 - The third section is the methods of the class.
 
+### Decomposition
+
+There are three decomposition types that can be represented via a UML. These are:
+
+- Association
+- Aggregation
+- Composition
+
+
+The notation that is used is a line connecting the parts. The following images showcase an example of each type.
+
+Note that the shape side is the container side.
+
+#### Association
+
+![](../../assets/uml/decomposition_association/association.png)
+
+#### Aggregation
+
+![](../../assets/uml/decomposition_aggregation/aggregation.png)
+
+#### Composition
+
+![](../../assets/uml/decomposition_composition/composition.png)
+
 ## References
 
 - https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/

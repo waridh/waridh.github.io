@@ -1,0 +1,6 @@
+@startuml
+class Person {}
+class Airline {}
+
+Person "0..*" -- "0..*" Airline
+@enduml
