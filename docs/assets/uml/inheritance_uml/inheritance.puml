@@ -1,0 +1,6 @@
+@startuml
+class Human {}
+abstract class Animal {}
+
+Animal <|-- Human
+@enduml

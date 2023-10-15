@@ -1,11 +1,11 @@
----
+<!-- ---
 layout: single
 title: "Multithreaded Deadlock Prevention Simulator"
 date: 2023-04-10 12:00:00 -0600
 categories: projects school
 tags: threads posix unix c c++ systems_programming
 excerpt: "A class project in which we create threads and simulate deadlock conditions. The goal is to virtually employ deadlock prevention methods."
----
+--- -->
 
 The code for this project can be found [here](https://github.com/waridh/CMPUT_379/tree/main/a4)
 

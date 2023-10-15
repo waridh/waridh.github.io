@@ -63,6 +63,14 @@ Note that the shape side is the container side.
 
 ![](../../assets/uml/decomposition_composition/composition.png)
 
+#### Inheritance
+
+![](../../assets/uml/inheritance_uml/inheritance.png)
+
+#### Implements
+
+![](../../assets/uml/implements_uml/implements.png)
+
 ## References
 
 - https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/

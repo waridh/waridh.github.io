@@ -95,3 +95,31 @@ Generalization exists in both OOP and functional programming.
 - In functional programming, you will see this concept appear through higher-order functions.
 - In object-oriented programming, you will see this concept through inheritance.
   - In inheritance, there may be many classes that share methods and attributes. This paradigm encourages the user make a super-class containing the shared methods, while leaving the specifics in the subclass.
+
+#### Java
+
+The Java implementation of Generalization is done through inheritance.
+
+- Inheritance is done through the extends keyword, which make the current class a subclass of what it is extending.
+- The subclass inherits all the protected and public methods from the original class. It can call the super class methods using the `super` keyword.
+- The subclass can override methods from the super class using the `@Override` annotation.
+
+##### Abstract method
+
+Abstract method is a method only has the signature, but no implementation. When a class inherits from a class with an abstract method, it must create the implementation for the abstract method.
+
+##### Abstract Classes
+
+An abstract class is a Java class that has at least one abstract method. The restrictions that are placed on abstract methods is that they cannot be instantiated as an object.
+
+The purpose of Abstract Classes is so that more specialized classes can be created from them with the implementation for the abstract methods made.
+
+A class can only extend one abstract class.
+
+##### Interface
+
+Effectively a contract. When a class implements an interface, it must have an implementation of all the method signatures that are present in the interface.
+
+The difference between an interface and an abstract class is that interfaces cannot have attributes, and there is no limit on the amount of interfaces that a class can implement.
+
+The convention is that Interface names starts with "I".
