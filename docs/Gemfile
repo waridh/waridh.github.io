@@ -16,9 +16,12 @@ gem "github-pages", group: :jekyll_plugins
 
 gem "jekyll-remote-theme"
 gem 'jekyll-relative-links'
+gem 'tzinfo-data'
 # If you have any plugins, put them here!
 
 # Performance-booster for watching directories on Windows
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
+
+gem "webrick", "~> 1.8"
