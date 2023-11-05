@@ -6,21 +6,21 @@ categories: project CST pointcloud
 excerpt_separator: <!--more-->
 ---
 
-[link](https://github.com/waridh/python_roughness_pointcloud)
+[repository](https://github.com/waridh/python_roughness_pointcloud)
 
 ## Overview
 
-In this project, I challenged myself to recreate the geometric roughness
+Python implementation of the geometric roughness
 analysis from the CloudCompare software in Python. The original code was
-written in C++, and it measures roughness by creating a best fitting least
+written in C++, and it measures roughness by creating the best fitting least
 square plane based on neighbouring points, where the neighbours are points
 that are within a certain radius of the point being analysed. From there the
 roughnesss is determined to be the distance the point being analysed is from the
 best fitting plane.
 
-I recreated this method on python using the available functions and libraries.
+This function was recreated on python using available functions and libraries.
 Some of the major libraries that was used to achieve this was Laspy, Numpy,
-and Scipy to name some.
+and Scipy.
 
 ![Point cloud geometric roughness rendering](/assets/images/python_geo_roughness/roughness0.3road1.jpg)
 
@@ -30,7 +30,7 @@ roughness calculations.
 
 The github repository hosting the code for this project can be found [here](https://github.com/waridh/python_roughness_pointcloud).
 
-## Methodology
+## Implementation
 
 The goal of this project was to recreate the output from CloudCompare, no GUI
 was developed for it.
@@ -42,11 +42,6 @@ point cloud. The library used to parse this file format was chosen to be Laspy,
 as it was flexible with the amount of content provided by the input file, while
 still being able to detect more niche fields. It also allows point cloud object
 to be exported to a .las file.
-
-### Datastructure
-
-- A class was constructed to store the input point cloud based on numpy arrays.
-- Methods for initializing and processing data are included in this class.
 
 ### Roughness calculations
 
@@ -60,6 +55,10 @@ will be taken as the geometric roughness value of that point. By using
 multiprocessing, we were able to speed up the processing time of the geometric
 roughness calculations.
 
+To improve on the performance, threading should be used instead of
+multiprocessing.
+
 ## References
 
-Citations are in progress
+- [CloudCompare Geometric Roughness](https://www.cloudcompare.org/doc/wiki/index.php/Roughness)
+- [Multiprocessing library](https://docs.python.org/3/library/multiprocessing.html)
