@@ -145,13 +145,14 @@ defaults:
       type: projects
     values:
       layout: single
-      author_profile: true
-      read_time: true
+      author_profile: false
+      read_time: false
       show_date: true
       share: true
       toc: true
       header:
         image: /assets/images/site_header.png
+      excerpt: "Engineering Project"
   -
     scope:
       path: ""
@@ -164,9 +165,6 @@ defaults:
       show_date: true
       toc: true
       excerpt: "Personal note for display"
- 
- 
-
 
 
 include:
