@@ -243,10 +243,13 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
     unicode-display_width (1.8.0)
+    webrick (1.8.1)
 
 PLATFORMS
   x64-mingw-ucrt
@@ -254,7 +257,10 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-include-cache
+  jekyll-relative-links
   jekyll-remote-theme
+  tzinfo-data
+  webrick (~> 1.8)
 
 BUNDLED WITH
    2.4.12

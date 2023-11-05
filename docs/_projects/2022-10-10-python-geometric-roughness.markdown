@@ -1,8 +1,8 @@
 ---
-layout: single
 title: "Python Point Cloud Geometric Roughness"
 date: 2022-10-10 12:00:00 -0700
 categories: project CST pointcloud
+tags: point_cloud python
 excerpt: "Python implementation of geometric roughness point cloud analysis from CloudCompare."
 ---
 
