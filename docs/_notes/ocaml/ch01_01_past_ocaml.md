@@ -1,1 +1,0 @@
-#TODO: Come back to read about non-programming knowledge stuff

@@ -48,13 +48,13 @@ words_per_minute    : 200
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/meta/drinking_at_beach_512_80.jpg"
+  avatar           : "/assets/images/meta/bach_at_slime.jpg"
   bio              : "Computer Engineer"
   location         : "Edmonton, AB"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:waridh@ualberta.ca"
+      url: "mailto:waridh@proton.me"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/waridh-wongwandanee/"
@@ -87,7 +87,7 @@ paginate_path: /blog/page:num
 
 google_site_verification: "googlebee16fba23adfa23"
 
-timezone    : "Canada/Pacific"
+timezone    : "Canada/Eastern"
 
 category_archive:
   type: liquid
@@ -120,7 +120,6 @@ relative_links:
   collections: true
 
 defaults:
-  # _posts
 
   - scope:
       path: ""
